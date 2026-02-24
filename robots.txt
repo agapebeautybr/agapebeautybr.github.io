@@ -1,0 +1,6 @@
+# ✏️ EDITE: Troque "agapebeautybr.github.io" pelo seu domínio personalizado, se tiver.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://agapebeautybr.github.io/sitemap.xml
