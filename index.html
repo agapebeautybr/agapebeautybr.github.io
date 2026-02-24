@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ✏️ SEO BÁSICO: edite título, descrição e palavras-chave -->
+    <title>Ágape Beauty | Cosméticos e Maquiagem Online - Fortaleza CE</title>
+    <meta name="description" content="Ágape Beauty - Cosméticos, maquiagem e skincare de qualidade. Base, batom, sombra, sérum e muito mais. Entrega para todo o Brasil via SEDEX. Compre pelo WhatsApp!">
+    <meta name="keywords" content="cosméticos, maquiagem, skincare, base líquida, batom, sombra, sérum vitamina c, blush, delineador, hidratante facial, esmalte, perfume, cabelo, Fortaleza, Ceará, comprar maquiagem online">
+    <meta name="author" content="Ágape Beauty">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#c9748f">
+    <link rel="canonical" href="https://agapebeautybr.github.io/">
+
+    <!-- ✏️ OPEN GRAPH: aparece quando alguém compartilha no WhatsApp/Instagram -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ágape Beauty">
+    <meta property="og:title" content="Ágape Beauty | Cosméticos e Maquiagem Online">
+    <meta property="og:description" content="Cosméticos, maquiagem e skincare premium. Entrega para todo o Brasil. Compre agora pelo WhatsApp!">
+    <meta property="og:url" content="https://agapebeautybr.github.io/">
+    <meta property="og:image" content="https://agapebeautybr.github.io/images/og-image.jpg">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ágape Beauty | Cosméticos e Maquiagem Online">
+    <meta name="twitter:description" content="Cosméticos, maquiagem e skincare premium. Entrega para todo o Brasil.">
+    <meta name="twitter:image" content="https://agapebeautybr.github.io/images/og-image.jpg">
+
+    <!-- ✏️ DADOS ESTRUTURADOS: ajuda o Google a entender seu negócio -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Store",
+        "name": "Ágape Beauty",
+        "description": "Loja de cosméticos, maquiagem e skincare de qualidade premium.",
+        "url": "https://agapebeautybr.github.io/",
+        "telephone": "+55-85-99847-4074",
+        "email": "agapebeauty@email.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Fortaleza",
+            "addressRegion": "CE",
+            "addressCountry": "BR"
+        },
+        "openingHours": "Mo-Sa 08:00-18:00",
+        "currenciesAccepted": "BRL",
+        "paymentAccepted": "PIX, Cartão, Transferência",
+        "sameAs": [
+            "https://instagram.com/agapebeauty",
+            "https://facebook.com/agapebeauty"
+        ]
+    }
+    </script>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>💄</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --cor-rosa-nude: #e8a0b4;
+            --cor-rosa-escuro: #c9748f;
+            --cor-dourado: #c9a96e;
+            --cor-fundo: #fdf6f0;
+            --cor-texto: #2b1a1f;
+            --cor-branco: #ffffff;
+            --cor-cinza-claro: #f5f5f5;
+            --fonte-titulo: 'Playfair Display', serif;
+            --fonte-corpo: 'Jost', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--fonte-corpo); color: var(--cor-texto); background-color: var(--cor-fundo); overflow-x: hidden; }
+        body { cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="8" fill="%23c9748f"/></svg>') 16 16, auto; }
+        a, button { cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="8" fill="%23c9748f"/></svg>') 16 16, pointer; }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+
+        .particle { position: fixed; pointer-events: none; font-size: 2rem; opacity: 0.3; animation: float 6s ease-in-out infinite; z-index: 1; }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed; top: 0; width: 100%;
+            background-color: rgba(253, 246, 240, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .logo { font-family: var(--fonte-titulo); font-size: 1.8rem; font-weight: bold; display: flex; align-items: center; gap: 0.5rem; }
+        .logo-parte1 { color: var(--cor-rosa-escuro); }
+        .logo-parte2 { color: var(--cor-dourado); font-style: italic; }
+        nav { display: flex; gap: 2rem; align-items: center; }
+        nav a { text-decoration: none; color: var(--cor-texto); font-weight: 500; transition: color 0.3s; position: relative; }
+        nav a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background-color: var(--cor-rosa-escuro); transition: width 0.3s; }
+        nav a:hover::after { width: 100%; }
+
+        .btn-carrinho-header {
+            position: relative;
+            background-color: var(--cor-rosa-escuro);
+            color: var(--cor-branco);
+            padding: 0.7rem 1.5rem;
+            border: none; border-radius: 25px;
+            font-weight: 600; font-size: 0.9rem;
+            transition: all 0.3s;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+        }
+        .btn-carrinho-header:hover { background-color: var(--cor-rosa-nude); transform: scale(1.05); }
+        .badge-carrinho {
+            position: absolute; top: -8px; right: -8px;
+            background-color: var(--cor-dourado);
+            color: white; border-radius: 50%;
+            width: 22px; height: 22px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.75rem; font-weight: 700;
+            display: none;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            margin-top: 80px; min-height: 100vh;
+            background: radial-gradient(ellipse at center, rgba(232,160,180,0.2) 0%, rgba(201,116,143,0.1) 50%, var(--cor-fundo) 100%);
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden; padding: 2rem;
+        }
+        .hero::before { content: ''; position: absolute; width: 300px; height: 300px; background: rgba(201,169,110,0.1); border-radius: 50%; top: 10%; right: 10%; animation: float 8s ease-in-out infinite; }
+        .hero::after { content: ''; position: absolute; width: 200px; height: 200px; background: rgba(232,160,180,0.1); border-radius: 50%; bottom: 10%; left: 5%; animation: float 10s ease-in-out infinite; }
+        .hero-content { text-align: center; max-width: 700px; z-index: 10; animation: fadeInUp 1s ease-out; }
+        .hero h1 { font-family: var(--fonte-titulo); font-size: 3.5rem; font-style: italic; color: var(--cor-rosa-escuro); margin-bottom: 1rem; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; color: var(--cor-texto); margin-bottom: 2rem; opacity: 0.8; }
+        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 1rem 2rem; border: none; border-radius: 30px; font-size: 1rem; font-weight: 600; transition: all 0.3s; text-decoration: none; display: inline-block; font-family: var(--fonte-corpo); }
+        .btn-primary { background-color: var(--cor-rosa-escuro); color: var(--cor-branco); }
+        .btn-primary:hover { background-color: var(--cor-rosa-nude); transform: translateY(-3px); box-shadow: 0 10px 25px rgba(201,116,143,0.3); }
+        .btn-secondary { background-color: var(--cor-dourado); color: var(--cor-branco); }
+        .btn-secondary:hover { background-color: var(--cor-rosa-escuro); transform: translateY(-3px); }
+
+        /* ===== PRODUTOS ===== */
+        .secao-produtos { padding: 2rem 1rem; background-color: var(--cor-branco); }
+        .secao-titulo { text-align: center; margin-bottom: 3rem; }
+        .secao-titulo h2 { font-family: var(--fonte-titulo); font-size: 2.5rem; color: var(--cor-rosa-escuro); margin-bottom: 0.5rem; font-style: italic; }
+        .secao-titulo p { color: var(--cor-texto); opacity: 0.7; font-size: 1.1rem; }
+        .produtos-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.8rem; max-width: 1600px; margin: 0 auto; }
+        .produto-card { background-color: var(--cor-cinza-claro); border-radius: 15px; overflow: hidden; transition: all 0.3s; position: relative; display: flex; flex-direction: column; }
+        .produto-card:hover { transform: scale(1.03); box-shadow: 0 15px 40px rgba(201,116,143,0.2); }
+        .produto-imagem { width: 100%; height: 130px; object-fit: cover; object-position: center; display: block; }
+        .produto-badge { position: absolute; top: 8px; right: 8px; background-color: var(--cor-dourado); color: white; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.65rem; font-weight: 600; z-index: 10; }
+        .produto-badge.esgotado { background-color: #999; }
+        .produto-info { padding: 0.65rem; flex: 1; display: flex; flex-direction: column; }
+        .produto-categoria { font-size: 0.65rem; color: var(--cor-rosa-escuro); font-weight: 600; text-transform: uppercase; margin-bottom: 0.2rem; }
+        .produto-nome { font-family: var(--fonte-titulo); font-size: 0.95rem; color: var(--cor-rosa-escuro); margin-bottom: 0.2rem; font-style: italic; line-height: 1.2; }
+        .produto-descricao { font-size: 0.72rem; color: var(--cor-texto); opacity: 0.7; margin-bottom: 0.4rem; line-height: 1.25; flex: 1; }
+        .produto-preco { font-family: var(--fonte-titulo); font-size: 1rem; color: var(--cor-dourado); font-weight: bold; margin-bottom: 0.4rem; }
+        
+        .produto-quantidade { display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.3rem; }
+        .produto-quantidade label { font-size: 0.9rem; color: var(--cor-texto); opacity: 0.7; }
+        .input-quantidade {
+            width: 55px; padding: 0.25rem 0.4rem;
+            border: 2px solid var(--cor-rosa-nude);
+            border-radius: 6px; font-family: var(--fonte-corpo);
+            font-size: 0.8rem; text-align: center;
+            color: var(--cor-texto);
+        }
+        .input-quantidade:focus { outline: none; border-color: var(--cor-rosa-escuro); }
+
+        .btn-comprar {
+            width: 100%; background-color: var(--cor-rosa-escuro); color: white;
+            padding: 0.5rem; border: none; border-radius: 6px;
+            font-weight: 600; transition: all 0.3s; font-family: var(--fonte-corpo);
+            font-size: 0.8rem;
+        }
+        .btn-comprar:hover:not(:disabled) { background-color: var(--cor-rosa-nude); transform: translateY(-2px); }
+        .btn-comprar:disabled { background-color: #ccc; cursor: not-allowed; opacity: 0.6; }
+        .btn-comprar.adicionado { background-color: #4caf50; }
+
+        /* ===== CARRINHO LATERAL ===== */
+        .overlay-carrinho {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+            z-index: 1100; opacity: 0; pointer-events: none; transition: opacity 0.3s;
+        }
+        .overlay-carrinho.ativo { opacity: 1; pointer-events: all; }
+
+        .carrinho-lateral {
+            position: fixed; top: 0; right: -450px; width: 450px; max-width: 100vw;
+            height: 100vh; background: white;
+            z-index: 1200; transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex; flex-direction: column;
+            box-shadow: -5px 0 30px rgba(0,0,0,0.15);
+        }
+        .carrinho-lateral.aberto { right: 0; }
+
+        .carrinho-header {
+            padding: 1.5rem; border-bottom: 2px solid var(--cor-rosa-nude);
+            display: flex; justify-content: space-between; align-items: center;
+            background: linear-gradient(135deg, var(--cor-rosa-nude) 0%, var(--cor-rosa-escuro) 100%);
+            color: white;
+        }
+        .carrinho-header h2 { font-family: var(--fonte-titulo); font-size: 1.5rem; font-style: italic; }
+        .btn-fechar-carrinho { background: none; border: none; color: white; font-size: 1.8rem; line-height: 1; padding: 0; }
+        .btn-fechar-carrinho:hover { transform: scale(1.2); }
+
+        .carrinho-itens { flex: 1; overflow-y: auto; padding: 1.5rem; }
+        .carrinho-vazio { text-align: center; padding: 3rem 1rem; color: var(--cor-texto); opacity: 0.5; }
+        .carrinho-vazio-icon { font-size: 4rem; margin-bottom: 1rem; }
+
+        .item-carrinho {
+            display: flex; gap: 1rem; padding: 1rem 0;
+            border-bottom: 1px solid #f0e6e6; align-items: center;
+            animation: slideDown 0.3s ease;
+        }
+        .item-carrinho img { width: 70px; height: 70px; object-fit: cover; border-radius: 8px; }
+        .item-info { flex: 1; }
+        .item-nome { font-weight: 600; font-size: 0.95rem; color: var(--cor-rosa-escuro); }
+        .item-preco { color: var(--cor-dourado); font-weight: 700; font-size: 0.9rem; margin-top: 0.3rem; }
+        .item-controles { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; }
+        .btn-qtd { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--cor-rosa-escuro); background: none; color: var(--cor-rosa-escuro); font-size: 1rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+        .btn-qtd:hover { background: var(--cor-rosa-escuro); color: white; }
+        .qtd-texto { min-width: 30px; text-align: center; font-weight: 600; }
+        .btn-remover-item { background: none; border: none; color: #ccc; font-size: 1.2rem; margin-left: auto; }
+        .btn-remover-item:hover { color: #e74c3c; }
+
+        /* ===== STEPS DO CARRINHO ===== */
+        .steps-indicator {
+            display: flex; padding: 0.8rem 1.5rem;
+            background: #fdf6f0; border-bottom: 1px solid var(--cor-rosa-nude);
+            gap: 0;
+        }
+        .step-item {
+            flex: 1; display: flex; flex-direction: column; align-items: center;
+            gap: 0.3rem; position: relative; font-size: 0.78rem;
+            color: #bbb; font-weight: 600;
+        }
+        .step-item::after {
+            content: ''; position: absolute; top: 13px; left: 50%; width: 100%;
+            height: 2px; background: #e0e0e0; z-index: 0;
+        }
+        .step-item:last-child::after { display: none; }
+        .step-circulo {
+            width: 28px; height: 28px; border-radius: 50%;
+            background: #e0e0e0; color: #999;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.8rem; font-weight: 700; z-index: 1;
+            transition: all 0.3s;
+        }
+        .step-item.ativo .step-circulo { background: var(--cor-rosa-escuro); color: white; }
+        .step-item.ativo { color: var(--cor-rosa-escuro); }
+        .step-item.concluido .step-circulo { background: #4caf50; color: white; }
+        .step-item.concluido { color: #4caf50; }
+
+        /* Painéis de step */
+        .step-painel { display: none; flex-direction: column; flex: 1; overflow: hidden; min-height: 0; }
+        .step-painel.ativo { display: flex; }
+
+        /* Step 1 - itens */
+        .painel-itens { flex: 1; overflow-y: auto; padding: 1rem 1.5rem; }
+
+        /* Step 1 - rodapé */
+        .step1-footer {
+            padding: 1rem 1.5rem;
+            border-top: 2px solid var(--cor-rosa-nude);
+            background: white;
+        }
+        .linha-subtotal { display: flex; justify-content: space-between; margin-bottom: 1rem; font-size: 1rem; font-weight: 600; }
+        .linha-subtotal span:last-child { color: var(--cor-dourado); font-size: 1.1rem; }
+
+        .btn-confirmar-pedido {
+            width: 100%; padding: 1rem;
+            background: linear-gradient(135deg, var(--cor-rosa-escuro) 0%, var(--cor-rosa-nude) 100%);
+            color: white; border: none; border-radius: 12px;
+            font-size: 1.05rem; font-weight: 700; font-family: var(--fonte-corpo);
+            display: flex; align-items: center; justify-content: center; gap: 0.7rem;
+            transition: all 0.3s;
+        }
+        .btn-confirmar-pedido:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(201,116,143,0.4); }
+        .btn-confirmar-pedido:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+        /* Step 2 - frete e endereço */
+        .painel-frete-endereco { flex: 1; overflow-y: auto; padding: 1.2rem 1.5rem; display: flex; flex-direction: column; gap: 1.2rem; }
+
+        .bloco-titulo { font-weight: 700; color: var(--cor-texto); margin-bottom: 0.7rem; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem; }
+
+        .frete-input-grupo { display: flex; gap: 0.5rem; margin-bottom: 0.5rem; }
+        .input-cep {
+            flex: 1; padding: 0.6rem 0.8rem;
+            border: 2px solid var(--cor-rosa-nude); border-radius: 8px;
+            font-family: var(--fonte-corpo); font-size: 0.95rem;
+        }
+        .input-cep:focus { outline: none; border-color: var(--cor-rosa-escuro); }
+        .btn-calcular-frete {
+            padding: 0.6rem 1rem; background: var(--cor-rosa-escuro); color: white;
+            border: none; border-radius: 8px; font-weight: 600; font-size: 0.85rem;
+            white-space: nowrap;
+        }
+        .btn-calcular-frete:hover { background: var(--cor-rosa-nude); }
+        .btn-calcular-frete:disabled { opacity: 0.6; cursor: not-allowed; }
+        .resultado-frete { margin-top: 0.5rem; padding: 0.8rem; border-radius: 8px; font-size: 0.85rem; line-height: 1.6; }
+        .resultado-frete.sucesso { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+        .resultado-frete.erro { background: #fce4ec; color: #c62828; border: 1px solid #f8bbd0; }
+        .resultado-frete.carregando { background: #fff3e0; color: #e65100; }
+
+        .endereco-campos { display: grid; gap: 0.5rem; }
+        .input-endereco {
+            width: 100%; padding: 0.6rem 0.8rem;
+            border: 2px solid var(--cor-rosa-nude); border-radius: 8px;
+            font-family: var(--fonte-corpo); font-size: 0.9rem;
+        }
+        .input-endereco:focus { outline: none; border-color: var(--cor-rosa-escuro); }
+        .endereco-linha { display: grid; grid-template-columns: 2fr 1fr; gap: 0.5rem; }
+
+        /* Step 2 - rodapé */
+        .step2-footer {
+            padding: 1rem 1.5rem;
+            border-top: 2px solid var(--cor-rosa-nude);
+            background: white;
+        }
+        .linha-total { display: flex; justify-content: space-between; margin-bottom: 0.4rem; font-size: 0.9rem; }
+        .linha-total span:last-child { color: var(--cor-dourado); }
+        .linha-total.grande { font-size: 1.15rem; font-weight: 700; color: var(--cor-rosa-escuro); border-top: 2px solid var(--cor-rosa-nude); padding-top: 0.6rem; margin-top: 0.4rem; }
+        .linha-total.grande span:last-child { color: var(--cor-rosa-escuro); }
+
+        .step2-botoes { display: flex; gap: 0.6rem; margin-top: 0.8rem; }
+        .btn-voltar {
+            padding: 0.8rem 1rem; background: none;
+            border: 2px solid var(--cor-rosa-nude); border-radius: 10px;
+            color: var(--cor-rosa-escuro); font-weight: 600; font-family: var(--fonte-corpo);
+            font-size: 0.9rem; white-space: nowrap;
+        }
+        .btn-voltar:hover { background: var(--cor-rosa-nude); color: white; }
+
+        .btn-enviar-whatsapp {
+            flex: 1; padding: 0.8rem;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: white; border: none; border-radius: 10px;
+            font-size: 0.95rem; font-weight: 700; font-family: var(--fonte-corpo);
+            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+            transition: all 0.3s;
+        }
+        .btn-enviar-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37,211,102,0.4); }
+        .btn-enviar-whatsapp:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+        /* ===== DIFERENCIAIS ===== */
+        .secao-diferenciais { padding: 4rem 2rem; background-color: var(--cor-fundo); }
+        .diferenciais-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1000px; margin: 0 auto; }
+        .diferencial-card { text-align: center; padding: 2rem; }
+        .diferencial-icone { font-size: 3rem; margin-bottom: 1rem; animation: float 4s ease-in-out infinite; }
+        .diferencial-titulo { font-family: var(--fonte-titulo); font-size: 1.3rem; color: var(--cor-rosa-escuro); margin-bottom: 0.5rem; font-style: italic; }
+        .diferencial-texto { color: var(--cor-texto); opacity: 0.7; line-height: 1.6; }
+
+        /* ===== SOBRE ===== */
+        .secao-sobre { padding: 4rem 2rem; background-color: var(--cor-branco); }
+        .sobre-container { max-width: 800px; margin: 0 auto; }
+        .secao-sobre h2 { font-family: var(--fonte-titulo); font-size: 2.5rem; color: var(--cor-rosa-escuro); margin-bottom: 1.5rem; text-align: center; font-style: italic; }
+        .secao-sobre p { font-size: 1.1rem; color: var(--cor-texto); line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; opacity: 0.8; }
+
+        /* ===== CONTATO ===== */
+        .secao-contato { padding: 4rem 2rem; background: linear-gradient(135deg, rgba(232,160,180,0.1) 0%, rgba(201,169,110,0.1) 100%); text-align: center; }
+        .secao-contato h2 { font-family: var(--fonte-titulo); font-size: 2.5rem; color: var(--cor-rosa-escuro); margin-bottom: 1rem; font-style: italic; }
+        .secao-contato p { font-size: 1.1rem; color: var(--cor-texto); margin-bottom: 2rem; opacity: 0.8; }
+        .btn-contato { background-color: var(--cor-rosa-escuro); color: white; padding: 1rem 2.5rem; border: none; border-radius: 30px; font-size: 1.1rem; font-weight: 600; transition: all 0.3s; text-decoration: none; display: inline-block; font-family: var(--fonte-corpo); }
+        .btn-contato:hover { background-color: var(--cor-dourado); transform: translateY(-3px); }
+
+        /* ===== FOOTER ===== */
+        footer { background-color: var(--cor-texto); color: white; padding: 3rem 2rem 1rem; text-align: center; }
+        .footer-content { max-width: 1200px; margin: 0 auto 2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .footer-section h3 { font-family: var(--fonte-titulo); font-size: 1.3rem; margin-bottom: 1rem; color: var(--cor-rosa-nude); font-style: italic; }
+        .footer-section p { opacity: 0.8; line-height: 1.6; }
+        .redes-sociais { display: flex; gap: 1rem; justify-content: center; margin-top: 1rem; }
+        .rede-social { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: var(--cor-rosa-escuro); border-radius: 50%; text-decoration: none; color: white; transition: all 0.3s; font-size: 1.2rem; }
+        .rede-social:hover { background-color: var(--cor-rosa-nude); transform: translateY(-3px); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; opacity: 0.7; }
+
+        /* ===== WHATSAPP FLUTUANTE ===== */
+        .whatsapp-flutuante {
+            position: fixed; bottom: 30px; right: 30px;
+            width: 60px; height: 60px; background-color: #25d366;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            text-decoration: none; color: white; font-size: 1.8rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2); transition: all 0.3s;
+            z-index: 999; animation: pulse 2s ease-in-out infinite;
+        }
+        .whatsapp-flutuante:hover { transform: scale(1.1); }
+
+        /* ===== TOAST ===== */
+        .toast {
+            position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%) translateY(100px);
+            background: var(--cor-rosa-escuro); color: white;
+            padding: 0.8rem 1.5rem; border-radius: 25px;
+            font-weight: 600; z-index: 9999;
+            transition: transform 0.3s; pointer-events: none;
+        }
+        .toast.visivel { transform: translateX(-50%) translateY(0); }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1rem; padding: 1rem; }
+            nav { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+            .hero h1 { font-size: 2.2rem; }
+            .produtos-grid { grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+            .diferenciais-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-content { grid-template-columns: 1fr; gap: 1.5rem; }
+            .carrinho-lateral { width: 100vw; }
+        }
+        @media (max-width: 480px) {
+            header { padding: 0.8rem; }
+            .logo { font-size: 1.3rem; }
+            nav { gap: 0.5rem; font-size: 0.85rem; }
+            .hero { margin-top: 120px; min-height: auto; padding: 2rem 1rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero-buttons { flex-direction: column; }
+            .btn { width: 100%; padding: 0.8rem 1rem; }
+            .produtos-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+            .diferenciais-grid { grid-template-columns: 1fr; }
+            .secao-produtos, .secao-diferenciais, .secao-sobre, .secao-contato { padding: 2rem 1rem; }
+            .whatsapp-flutuante { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        // ✏️ EDITE: Número do WhatsApp
+        const WHATSAPP = "5585998474074";
+
+        // ✏️ EDITE: Produtos
+        // ============================================================
+        // ✏️ COMO EDITAR SEUS PRODUTOS:
+        //
+        //  id        → número único para cada produto (não repita!)
+        //  nome      → nome do produto que aparece no card
+        //  categoria → ex: "Maquiagem", "Skincare", "Lábios", "Olhos",
+        //              "Unhas", "Perfume", "Cabelo", "Corpo"
+        //  descricao → frase curta (máx. 2 linhas) sobre o produto
+        //  preco     → valor NUMÉRICO, sem R$ (ex: 49.90)
+        //  imagem    → caminho da foto (salve na pasta images/)
+        //              Ex: "images/nome-do-arquivo.jpg"
+        //  emEstoque → true  = produto disponível para venda
+        //              false = aparece como "Esgotado"
+        //
+        //  Para ADICIONAR produto: copie um bloco { ... }, e edite
+        //  Para REMOVER produto:   apague o bloco { ... } inteiro
+        //  Lembre de separar os produtos com vírgula!
+        // ============================================================
+        const produtos = [
+
+            // ── MAQUIAGEM ─────────────────────────────────────────
+            {
+                id: 1,
+                nome: "Base Líquida Matte 24h",
+                categoria: "Maquiagem",
+                descricao: "Cobertura total, acabamento matte, dura o dia todo.",
+                preco: 89.90,
+                imagem: "images/base-liquida.webp",
+                emEstoque: true
+            },
+            {
+                id: 2,
+                nome: "Base Líquida Natural",
+                categoria: "Maquiagem",
+                descricao: "Cobertura leve com efeito pele natural e luminoso.",
+                preco: 79.90,
+                imagem: "images/base-natural.jpg",
+                emEstoque: true
+            },
+            {
+                id: 3,
+                nome: "Corretivo Líquido",
+                categoria: "Maquiagem",
+                descricao: "Cobre olheiras e imperfeições com longa duração.",
+                preco: 39.90,
+                imagem: "images/corretivo.jpg",
+                emEstoque: true
+            },
+            {
+                id: 4,
+                nome: "Pó Compacto Matte",
+                categoria: "Maquiagem",
+                descricao: "Fixa a maquiagem e controla brilho por horas.",
+                preco: 54.90,
+                imagem: "images/po-compacto.jpg",
+                emEstoque: true
+            },
+            {
+                id: 5,
+                nome: "Blush Rosado",
+                categoria: "Maquiagem",
+                descricao: "Dá cor e vida ao rosto com pigmentação intensa.",
+                preco: 44.90,
+                imagem: "images/blush.jpg",
+                emEstoque: true
+            },
+            {
+                id: 6,
+                nome: "Contorno e Iluminador",
+                categoria: "Maquiagem",
+                descricao: "Kit 2 em 1 para modelar e destacar as feições.",
+                preco: 69.90,
+                imagem: "images/contorno.jpg",
+                emEstoque: true
+            },
+            {
+                id: 7,
+                nome: "Primer Facial",
+                categoria: "Maquiagem",
+                descricao: "Prepara a pele e aumenta a duração da maquiagem.",
+                preco: 59.90,
+                imagem: "images/primer.jpg",
+                emEstoque: true
+            },
+            {
+                id: 8,
+                nome: "Setting Spray Fixador",
+                categoria: "Maquiagem",
+                descricao: "Fixa a make por até 16h com efeito fresco.",
+                preco: 49.90,
+                imagem: "images/setting-spray.jpg",
+                emEstoque: true
+            },
+
+            // ── LÁBIOS ────────────────────────────────────────────
+            {
+                id: 9,
+                nome: "Batom Veludo Rosê",
+                categoria: "Lábios",
+                descricao: "Tom rosé perfeito, textura veludo, ultra hidratante.",
+                preco: 34.90,
+                imagem: "images/batom.webp",
+                emEstoque: true
+            },
+            {
+                id: 10,
+                nome: "Batom Líquido Vermelho",
+                categoria: "Lábios",
+                descricao: "Vermelho clássico, longa duração, não resseca.",
+                preco: 38.90,
+                imagem: "images/batom-vermelho.jpg",
+                emEstoque: true
+            },
+            {
+                id: 11,
+                nome: "Gloss Labial Nude",
+                categoria: "Lábios",
+                descricao: "Brilho volumoso com efeito plump e hidratação.",
+                preco: 29.90,
+                imagem: "images/gloss.jpg",
+                emEstoque: true
+            },
+            {
+                id: 12,
+                nome: "Lip Liner Contorno",
+                categoria: "Lábios",
+                descricao: "Define e contorna os lábios com precisão.",
+                preco: 24.90,
+                imagem: "images/lip-liner.jpg",
+                emEstoque: true
+            },
+            {
+                id: 13,
+                nome: "Batom Nude Matte",
+                categoria: "Lábios",
+                descricao: "Tom nude sofisticado para o dia a dia.",
+                preco: 34.90,
+                imagem: "images/batom-nude.jpg",
+                emEstoque: true
+            },
+
+            // ── OLHOS ─────────────────────────────────────────────
+            {
+                id: 14,
+                nome: "Paleta de Sombras Rosê",
+                categoria: "Olhos",
+                descricao: "12 tons matte e shimmer para looks deslumbrantes.",
+                preco: 159.90,
+                imagem: "images/paleta.jpg",
+                emEstoque: true
+            },
+            {
+                id: 15,
+                nome: "Paleta Nude & Brown",
+                categoria: "Olhos",
+                descricao: "16 tons terrosos versáteis para qualquer look.",
+                preco: 179.90,
+                imagem: "images/paleta-nude.jpg",
+                emEstoque: true
+            },
+            {
+                id: 16,
+                nome: "Máscara de Cílios Volume",
+                categoria: "Olhos",
+                descricao: "Máximo volume e curvatura sem grudar os cílios.",
+                preco: 49.90,
+                imagem: "images/mascara-cilios.jpg",
+                emEstoque: true
+            },
+            {
+                id: 17,
+                nome: "Delineador Líquido Preto",
+                categoria: "Olhos",
+                descricao: "Traço preciso e intenso, resistente à água.",
+                preco: 39.90,
+                imagem: "images/delineador.jpg",
+                emEstoque: true
+            },
+            {
+                id: 18,
+                nome: "Lápis de Olho Kajal",
+                categoria: "Olhos",
+                descricao: "Define o olhar com cor intensa e fácil aplicação.",
+                preco: 22.90,
+                imagem: "images/lapis-olho.jpg",
+                emEstoque: true
+            },
+            {
+                id: 19,
+                nome: "Sombra Glitter Ouro",
+                categoria: "Olhos",
+                descricao: "Pigmento glitter dourado para looks de festa.",
+                preco: 32.90,
+                imagem: "images/glitter-ouro.jpg",
+                emEstoque: true
+            },
+            {
+                id: 20,
+                nome: "Cílios Postiços Naturais",
+                categoria: "Olhos",
+                descricao: "Cílios reutilizáveis para efeito natural e delicado.",
+                preco: 19.90,
+                imagem: "images/cilios.jpg",
+                emEstoque: false
+            },
+
+            // ── SKINCARE ──────────────────────────────────────────
+            {
+                id: 21,
+                nome: "Sérum Vitamina C 20%",
+                categoria: "Skincare",
+                descricao: "Ilumina, uniformiza e protege a pele. 30ml.",
+                preco: 129.90,
+                imagem: "images/serum.jpg",
+                emEstoque: true
+            },
+            {
+                id: 22,
+                nome: "Hidratante Facial FPS 50",
+                categoria: "Skincare",
+                descricao: "Hidrata e protege do sol em um único produto.",
+                preco: 89.90,
+                imagem: "images/hidratante-fps.jpg",
+                emEstoque: true
+            },
+            {
+                id: 23,
+                nome: "Ácido Hialurônico Sérum",
+                categoria: "Skincare",
+                descricao: "Hidratação profunda, reduz linhas de expressão.",
+                preco: 119.90,
+                imagem: "images/ac-hialuronico.jpg",
+                emEstoque: true
+            },
+            {
+                id: 24,
+                nome: "Tônico Facial Calmante",
+                categoria: "Skincare",
+                descricao: "Equilibra o pH e prepara a pele para os próximos passos.",
+                preco: 59.90,
+                imagem: "images/tonico.jpg",
+                emEstoque: true
+            },
+            {
+                id: 25,
+                nome: "Máscara Facial Argila",
+                categoria: "Skincare",
+                descricao: "Desobstrui os poros e controla a oleosidade.",
+                preco: 49.90,
+                imagem: "images/mascara-argila.jpg",
+                emEstoque: true
+            },
+            {
+                id: 26,
+                nome: "Esfoliante Facial Suave",
+                categoria: "Skincare",
+                descricao: "Remove células mortas e renova o viço da pele.",
+                preco: 44.90,
+                imagem: "images/esfoliante.jpg",
+                emEstoque: true
+            },
+            {
+                id: 27,
+                nome: "Óleo Facial de Rosa",
+                categoria: "Skincare",
+                descricao: "Nutre, repara e deixa a pele com brilho saudável.",
+                preco: 99.90,
+                imagem: "images/oleo-rosa.jpg",
+                emEstoque: true
+            },
+            {
+                id: 28,
+                nome: "Retinol Noturno Sérum",
+                categoria: "Skincare",
+                descricao: "Renova a pele durante a noite, anti-aging.",
+                preco: 149.90,
+                imagem: "images/retinol.jpg",
+                emEstoque: false
+            },
+            {
+                id: 29,
+                nome: "Protetor Solar Facial",
+                categoria: "Skincare",
+                descricao: "FPS 60, toque seco, sem deixar marca branca.",
+                preco: 79.90,
+                imagem: "images/protetor-solar.jpg",
+                emEstoque: true
+            },
+            {
+                id: 30,
+                nome: "Demaquilante Bifásico",
+                categoria: "Skincare",
+                descricao: "Remove até maquiagem à prova d'água suavemente.",
+                preco: 39.90,
+                imagem: "images/demaquilante.jpg",
+                emEstoque: true
+            },
+
+            // ── UNHAS ─────────────────────────────────────────────
+            {
+                id: 31,
+                nome: "Esmalte Rosê Nude",
+                categoria: "Unhas",
+                descricao: "Tom rosé delicado, secagem rápida e longa duração.",
+                preco: 14.90,
+                imagem: "images/esmalte-rose.jpg",
+                emEstoque: true
+            },
+            {
+                id: 32,
+                nome: "Esmalte Vermelho Clássico",
+                categoria: "Unhas",
+                descricao: "Vermelho intenso, cobertura total em 1 demão.",
+                preco: 14.90,
+                imagem: "images/esmalte-vermelho.jpg",
+                emEstoque: true
+            },
+            {
+                id: 33,
+                nome: "Base e Top Coat Kit",
+                categoria: "Unhas",
+                descricao: "Prepara e sela o esmalte, dura até 2 semanas.",
+                preco: 29.90,
+                imagem: "images/base-top-coat.jpg",
+                emEstoque: true
+            },
+            {
+                id: 34,
+                nome: "Esmalte Glitter Rosa",
+                categoria: "Unhas",
+                descricao: "Glitter rosado para um acabamento festivo e glamouroso.",
+                preco: 17.90,
+                imagem: "images/esmalte-glitter.jpg",
+                emEstoque: true
+            },
+            {
+                id: 35,
+                nome: "Cutícula Removedora",
+                categoria: "Unhas",
+                descricao: "Remove cutículas com facilidade, sem dor.",
+                preco: 19.90,
+                imagem: "images/cuticula.jpg",
+                emEstoque: true
+            },
+
+            // ── PERFUMES ──────────────────────────────────────────
+            {
+                id: 36,
+                nome: "Deo Parfum Floral 75ml",
+                categoria: "Perfume",
+                descricao: "Fragrância floral elegante, longa fixação.",
+                preco: 189.90,
+                imagem: "images/perfume-floral.jpg",
+                emEstoque: true
+            },
+            {
+                id: 37,
+                nome: "Body Splash Rosê 200ml",
+                categoria: "Perfume",
+                descricao: "Leve e refrescante, ideal para o dia a dia.",
+                preco: 59.90,
+                imagem: "images/body-splash.jpg",
+                emEstoque: true
+            },
+            {
+                id: 38,
+                nome: "Deo Parfum Amadeirado",
+                categoria: "Perfume",
+                descricao: "Notas amadeiradas e sensuais para a noite.",
+                preco: 219.90,
+                imagem: "images/perfume-amadeirado.jpg",
+                emEstoque: true
+            },
+            {
+                id: 39,
+                nome: "Colônia Cítrica 100ml",
+                categoria: "Perfume",
+                descricao: "Fresca e energizante, perfeita para o verão.",
+                preco: 89.90,
+                imagem: "images/colonia.jpg",
+                emEstoque: false
+            },
+
+            // ── CABELO ────────────────────────────────────────────
+            {
+                id: 40,
+                nome: "Óleo Capilar Argan",
+                categoria: "Cabelo",
+                descricao: "Nutre, controla o frizz e dá brilho intenso.",
+                preco: 69.90,
+                imagem: "images/oleo-argan.jpg",
+                emEstoque: true
+            },
+            {
+                id: 41,
+                nome: "Máscara Hidratação Intensa",
+                categoria: "Cabelo",
+                descricao: "Recupera cabelos danificados em 10 minutos.",
+                preco: 54.90,
+                imagem: "images/mascara-cabelo.jpg",
+                emEstoque: true
+            },
+            {
+                id: 42,
+                nome: "Shampoo Nutritivo",
+                categoria: "Cabelo",
+                descricao: "Limpa sem agredir, com fórmula nutritiva suave.",
+                preco: 44.90,
+                imagem: "images/shampoo.jpg",
+                emEstoque: true
+            },
+            {
+                id: 43,
+                nome: "Leave-in Protetor Térmico",
+                categoria: "Cabelo",
+                descricao: "Protege até 230°C, reduz quebra e facilita a escova.",
+                preco: 49.90,
+                imagem: "images/leave-in.jpg",
+                emEstoque: true
+            },
+            {
+                id: 44,
+                nome: "Condicionador Intensivo",
+                categoria: "Cabelo",
+                descricao: "Desembaraça e hidrata do comprimento às pontas.",
+                preco: 44.90,
+                imagem: "images/condicionador.jpg",
+                emEstoque: true
+            },
+
+            // ── CORPO ─────────────────────────────────────────────
+            {
+                id: 45,
+                nome: "Hidratante Corporal Rosa",
+                categoria: "Corpo",
+                descricao: "Pele macia e perfumada por até 24h.",
+                preco: 59.90,
+                imagem: "images/hidratante-corpo.jpg",
+                emEstoque: true
+            },
+            {
+                id: 46,
+                nome: "Esfoliante Corporal Café",
+                categoria: "Corpo",
+                descricao: "Elimina células mortas e reduz aparência da celulite.",
+                preco: 49.90,
+                imagem: "images/esfoliante-corpo.jpg",
+                emEstoque: true
+            },
+            {
+                id: 47,
+                nome: "Óleo Corporal Brilhante",
+                categoria: "Corpo",
+                descricao: "Ilumina a pele com brilho dourado suave e irresistível.",
+                preco: 79.90,
+                imagem: "images/oleo-corporal.jpg",
+                emEstoque: true
+            },
+            {
+                id: 48,
+                nome: "Sabonete Líquido Floral",
+                categoria: "Corpo",
+                descricao: "Limpeza suave com aroma floral delicado.",
+                preco: 29.90,
+                imagem: "images/sabonete.jpg",
+                emEstoque: true
+            },
+            {
+                id: 49,
+                nome: "Kit Banho Relaxante",
+                categoria: "Corpo",
+                descricao: "Sal de banho + hidratante + esponja vegetal.",
+                preco: 99.90,
+                imagem: "images/kit-banho.jpg",
+                emEstoque: true
+            },
+            {
+                id: 50,
+                nome: "Creme para Mãos e Unhas",
+                categoria: "Corpo",
+                descricao: "Hidrata profundamente mãos ressecadas e cutículas.",
+                preco: 24.90,
+                imagem: "images/creme-maos.jpg",
+                emEstoque: true
+            },
+            {
+                id: 51,
+                nome: "Manteiga Corporal Cacau",
+                categoria: "Corpo",
+                descricao: "Nutritiva e perfumada, ideal para pele seca.",
+                preco: 54.90,
+                imagem: "images/manteiga-cacau.jpg",
+                emEstoque: true
+            },
+            {
+                id: 52,
+                nome: "Desodorante Stick Floral",
+                categoria: "Corpo",
+                descricao: "Proteção 48h sem álcool, sem irritar a pele.",
+                preco: 22.90,
+                imagem: "images/desodorante.jpg",
+                emEstoque: true
+            },
+
+        ];
+
+        // Estado do carrinho
+        let carrinho = [];
+        let freteInfo = null;
+        let endereco = {};
+
+        function formatarPreco(valor) {
+            return `R$ ${valor.toFixed(2).replace('.', ',')}`;
+        }
+
+        function criarParticulas() {
+            const emojis = ['✦', '✿', '✧', '✨'];
+            for (let i = 0; i < 15; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                p.style.left = Math.random() * 100 + '%';
+                p.style.top = Math.random() * 100 + '%';
+                p.style.animationDelay = Math.random() * 2 + 's';
+                p.style.animationDuration = (Math.random() * 4 + 6) + 's';
+                document.body.appendChild(p);
+            }
+        }
+
+        function mostrarToast(msg) {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.classList.add('visivel');
+            setTimeout(() => t.classList.remove('visivel'), 2500);
+        }
+
+        function adicionarAoCarrinho(id, qtd) {
+            const produto = produtos.find(p => p.id === id);
+            if (!produto || !produto.emEstoque) return;
+            const qtdNum = parseInt(qtd) || 1;
+            if (qtdNum < 1) return;
+            const existente = carrinho.find(i => i.id === id);
+            if (existente) {
+                existente.quantidade += qtdNum;
+            } else {
+                carrinho.push({ ...produto, quantidade: qtdNum });
+            }
+            atualizarCarrinho();
+            mostrarToast(`✓ ${produto.nome} adicionado ao carrinho!`);
+        }
+
+        function removerDoCarrinho(id) {
+            carrinho = carrinho.filter(i => i.id !== id);
+            atualizarCarrinho();
+        }
+
+        function alterarQuantidade(id, delta) {
+            const item = carrinho.find(i => i.id === id);
+            if (!item) return;
+            item.quantidade += delta;
+            if (item.quantidade <= 0) removerDoCarrinho(id);
+            else atualizarCarrinho();
+        }
+
+        function calcularSubtotal() {
+            return carrinho.reduce((total, item) => total + item.preco * item.quantidade, 0);
+        }
+
+        function atualizarCarrinho() {
+            const totalItens = carrinho.reduce((t, i) => t + i.quantidade, 0);
+            const badge = document.getElementById('badge-carrinho');
+            if (totalItens > 0) {
+                badge.style.display = 'flex';
+                badge.textContent = totalItens;
+            } else {
+                badge.style.display = 'none';
+            }
+
+            const container = document.getElementById('itens-carrinho');
+            if (carrinho.length === 0) {
+                container.innerHTML = `<div class="carrinho-vazio"><div class="carrinho-vazio-icon">🛒</div><p>Seu carrinho está vazio</p><p style="font-size:0.85rem;margin-top:0.5rem;opacity:0.6">Adicione produtos para continuar</p></div>`;
+            } else {
+                container.innerHTML = carrinho.map(item => `
+                    <div class="item-carrinho">
+                        <img src="${item.imagem}" alt="${item.nome}" onerror="this.src='data:image/svg+xml,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'70\\' height=\\'70\\'><rect width=\\'70\\' height=\\'70\\' fill=\\'%23f5e6ec\\'/><text x=\\'50%\\' y=\\'50%\\' dominant-baseline=\\'middle\\' text-anchor=\\'middle\\' font-size=\\'24\\'>💄</text></svg>'">
+                        <div class="item-info">
+                            <div class="item-nome">${item.nome}</div>
+                            <div class="item-preco">${formatarPreco(item.preco)} un.</div>
+                            <div class="item-controles">
+                                <button class="btn-qtd" onclick="alterarQuantidade(${item.id}, -1)">−</button>
+                                <span class="qtd-texto">${item.quantidade}</span>
+                                <button class="btn-qtd" onclick="alterarQuantidade(${item.id}, +1)">+</button>
+                                <strong style="margin-left:0.5rem;color:var(--cor-dourado)">${formatarPreco(item.preco * item.quantidade)}</strong>
+                            </div>
+                        </div>
+                        <button class="btn-remover-item" onclick="removerDoCarrinho(${item.id})" title="Remover">✕</button>
+                    </div>
+                `).join('');
+            }
+
+            const subtotal = calcularSubtotal();
+            document.getElementById('subtotal').textContent = formatarPreco(subtotal);
+            document.getElementById('btn-confirmar-pedido').disabled = carrinho.length === 0;
+        }
+
+        function irParaStep2() {
+            if (carrinho.length === 0) return;
+            const subtotal = calcularSubtotal();
+            document.getElementById('subtotal2').textContent = formatarPreco(subtotal);
+            atualizarTotalStep2();
+            document.getElementById('resumo-itens').innerHTML = carrinho.map(i =>
+                `▪ <b>${i.nome}</b> × ${i.quantidade} = ${formatarPreco(i.preco * i.quantidade)}`
+            ).join('<br>');
+            document.getElementById('step1').classList.remove('ativo');
+            document.getElementById('step2').classList.add('ativo');
+            document.getElementById('step-ind-1').classList.remove('ativo');
+            document.getElementById('step-ind-1').classList.add('concluido');
+            document.getElementById('step-ind-2').classList.add('ativo');
+            document.getElementById('carrinho-titulo-header').textContent = '📦 Frete & Entrega';
+        }
+
+        function voltarStep1() {
+            document.getElementById('step2').classList.remove('ativo');
+            document.getElementById('step1').classList.add('ativo');
+            document.getElementById('step-ind-1').classList.add('ativo');
+            document.getElementById('step-ind-1').classList.remove('concluido');
+            document.getElementById('step-ind-2').classList.remove('ativo');
+            document.getElementById('carrinho-titulo-header').textContent = '🛒 Meu Carrinho';
+        }
+
+        function atualizarTotalStep2() {
+            const subtotal = calcularSubtotal();
+            const frete = freteInfo ? freteInfo.valor : 0;
+            document.getElementById('subtotal2').textContent = formatarPreco(subtotal);
+            document.getElementById('frete-valor').textContent = freteInfo ? formatarPreco(freteInfo.valor) : '—';
+            document.getElementById('total-final').textContent = formatarPreco(subtotal + frete);
+        }
+
+
+        // ===== FRETE via ViaCEP + cálculo SEDEX estimado =====
+        // Nota: A API oficial dos Correios requer autenticação (SIGEP).
+        // Usamos ViaCEP para validar o CEP e calcular um valor estimado de SEDEX
+        // baseado no peso dos produtos e região de destino.
+        // Para integração real com a tabela dos Correios, seria necessário um backend.
+
+        async function calcularFrete() {
+            const cepInput = document.getElementById('input-cep').value.replace(/\D/g, '');
+            const btnCalc = document.getElementById('btn-calcular-frete');
+            const resultado = document.getElementById('resultado-frete');
+
+            if (cepInput.length !== 8) {
+                resultado.className = 'resultado-frete erro';
+                resultado.innerHTML = '❌ CEP inválido. Digite 8 dígitos.';
+                return;
+            }
+
+            if (carrinho.length === 0) {
+                resultado.className = 'resultado-frete erro';
+                resultado.innerHTML = '❌ Adicione produtos ao carrinho primeiro.';
+                return;
+            }
+
+            btnCalc.disabled = true;
+            resultado.className = 'resultado-frete carregando';
+            resultado.innerHTML = '⏳ Consultando CEP...';
+
+            try {
+                const resp = await fetch(`https://viacep.com.br/ws/${cepInput}/json/`);
+                const dados = await resp.json();
+
+                if (dados.erro) {
+                    resultado.className = 'resultado-frete erro';
+                    resultado.innerHTML = '❌ CEP não encontrado. Verifique e tente novamente.';
+                    btnCalc.disabled = false;
+                    return;
+                }
+
+                // Preencher endereço automaticamente
+                document.getElementById('end-rua').value = dados.logradouro || '';
+                document.getElementById('end-bairro').value = dados.bairro || '';
+                document.getElementById('end-cidade').value = dados.localidade || '';
+                document.getElementById('end-estado').value = dados.uf || '';
+
+                // Calcular frete SEDEX estimado por região (UF)
+                const pesoEstimado = carrinho.reduce((p, i) => p + 0.3 * i.quantidade, 0); // 300g por item estimado
+                const valorFreteSEDEX = calcularSEDEX(dados.uf, pesoEstimado);
+
+                freteInfo = {
+                    valor: valorFreteSEDEX,
+                    prazo: estimarPrazo(dados.uf),
+                    cep: cepInput,
+                    endereco: `${dados.logradouro || ''}, ${dados.bairro || ''} - ${dados.localidade || ''}/${dados.uf || ''}`
+                };
+
+                resultado.className = 'resultado-frete sucesso';
+                resultado.innerHTML = `
+                    ✅ <strong>SEDEX — ${formatarPreco(valorFreteSEDEX)}</strong><br>
+                    📍 ${dados.logradouro || ''}, ${dados.bairro || ''}<br>
+                    🏙️ ${dados.localidade}/${dados.uf}<br>
+                    📅 Prazo estimado: ${freteInfo.prazo} dias úteis<br>
+                    <small style="opacity:0.8">*Valor estimado. Sujeito a confirmação.</small>
+                `;
+
+                atualizarTotalStep2();
+
+            } catch (e) {
+                resultado.className = 'resultado-frete erro';
+                resultado.innerHTML = '❌ Erro ao consultar CEP. Verifique sua conexão.';
+            }
+
+            btnCalc.disabled = false;
+        }
+
+        // Tabela estimada SEDEX por região (valores aproximados 2024)
+        function calcularSEDEX(uf, pesoKg) {
+            const regioes = {
+                // Nordeste (CE origem)
+                CE: 1, // local
+                MA: 2, PE: 2, PI: 2, PB: 2, RN: 2, AL: 2, SE: 2, BA: 2,
+                // Sudeste
+                SP: 3, RJ: 3, MG: 3, ES: 3,
+                // Sul
+                PR: 4, SC: 4, RS: 4,
+                // Centro-Oeste
+                GO: 3, DF: 3, MT: 4, MS: 4,
+                // Norte
+                AM: 5, PA: 5, AC: 6, RO: 5, RR: 6, TO: 4, AP: 6
+            };
+            const faixaRegiao = regioes[uf] || 4;
+            
+            // Base + peso
+            const bases = { 1: 15, 2: 22, 3: 28, 4: 32, 5: 38, 6: 45 };
+            const base = bases[faixaRegiao];
+            const adicionalPeso = Math.max(0, pesoKg - 0.3) * 8;
+            return parseFloat((base + adicionalPeso).toFixed(2));
+        }
+
+        function estimarPrazo(uf) {
+            const prazos = {
+                CE: 1, MA: 2, PE: 2, PI: 2, PB: 2, RN: 2, AL: 2, SE: 2, BA: 2,
+                SP: 3, RJ: 3, MG: 3, ES: 3,
+                PR: 4, SC: 4, RS: 4,
+                GO: 3, DF: 3, MT: 5, MS: 4,
+                AM: 7, PA: 6, AC: 10, RO: 7, RR: 10, TO: 5, AP: 10
+            };
+            return prazos[uf] || 5;
+        }
+
+        function formatarCEP(input) {
+            let val = input.value.replace(/\D/g, '').slice(0, 8);
+            if (val.length > 5) val = val.slice(0, 5) + '-' + val.slice(5);
+            input.value = val;
+        }
+
+        // ===== ENVIO VIA WHATSAPP =====
+        function enviarPedidoWhatsApp() {
+            if (carrinho.length === 0) return;
+
+            const endRua = document.getElementById('end-rua').value;
+            const endNum = document.getElementById('end-numero').value;
+            const endCompl = document.getElementById('end-complemento').value;
+            const endBairro = document.getElementById('end-bairro').value;
+            const endCidade = document.getElementById('end-cidade').value;
+            const endEstado = document.getElementById('end-estado').value;
+            const endCep = document.getElementById('input-cep').value;
+            const nomeCliente = document.getElementById('end-nome').value;
+
+            if (!nomeCliente) { mostrarToast('⚠️ Digite seu nome'); return; }
+            if (!endRua || !endNum || !endCidade) { mostrarToast('⚠️ Preencha o endereço completo'); return; }
+            if (!freteInfo) { mostrarToast('⚠️ Calcule o frete antes de finalizar'); return; }
+
+            const linhasSeparador = '─────────────────────';
+            const subtotal = calcularSubtotal();
+            const totalFinal = subtotal + freteInfo.valor;
+
+            const itensMensagem = carrinho.map(item =>
+                `▪ *${item.nome}*\n   Qtd: ${item.quantidade} × ${formatarPreco(item.preco)} = *${formatarPreco(item.preco * item.quantidade)}*`
+            ).join('\n');
+
+            const enderecoCompleto = [endRua, endNum, endCompl, endBairro, endCidade, endEstado, `CEP: ${endCep}`].filter(Boolean).join(', ');
+
+            const mensagem = 
+`🌸 *NOVO PEDIDO — ÁGAPE BEAUTY* 🌸
+${linhasSeparador}
+
+👤 *Cliente:* ${nomeCliente}
+
+🛍️ *ITENS DO PEDIDO:*
+${itensMensagem}
+
+${linhasSeparador}
+💰 *Subtotal:* ${formatarPreco(subtotal)}
+🚚 *Frete SEDEX:* ${formatarPreco(freteInfo.valor)} (${freteInfo.prazo} dias úteis)
+✨ *TOTAL: ${formatarPreco(totalFinal)}*
+
+${linhasSeparador}
+📍 *ENDEREÇO DE ENTREGA:*
+${enderecoCompleto}
+
+${linhasSeparador}
+_Pedido enviado pelo site Ágape Beauty_ 💄`;
+
+            const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
+
+        // ===== CARRINHO UI =====
+        function abrirCarrinho() {
+            document.getElementById('carrinho-lateral').classList.add('aberto');
+            document.getElementById('overlay-carrinho').classList.add('ativo');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function fecharCarrinho() {
+            document.getElementById('carrinho-lateral').classList.remove('aberto');
+            document.getElementById('overlay-carrinho').classList.remove('ativo');
+            document.body.style.overflow = '';
+        }
+
+        function renderizarProdutos() {
+            const grid = document.getElementById('produtos-grid');
+            grid.innerHTML = '';
+            produtos.forEach((produto, index) => {
+                const card = document.createElement('div');
+                card.className = 'produto-card';
+                card.style.animationDelay = (index * 0.1) + 's';
+
+                const badge = produto.emEstoque
+                    ? `<span class="produto-badge">${produto.categoria}</span>`
+                    : `<span class="produto-badge esgotado">Esgotado</span>`;
+
+                card.innerHTML = `
+                    <img src="${produto.imagem}" alt="${produto.nome}" class="produto-imagem" onerror="this.src='data:image/svg+xml,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'300\\' height=\\'250\\'><rect width=\\'300\\' height=\\'250\\' fill=\\'%23f5e6ec\\'/><text x=\\'50%\\' y=\\'50%\\' dominant-baseline=\\'middle\\' text-anchor=\\'middle\\' font-size=\\'48\\'>💄</text></svg>'">
+                    ${badge}
+                    <div class="produto-info">
+                        <div class="produto-categoria">${produto.categoria}</div>
+                        <h3 class="produto-nome">${produto.nome}</h3>
+                        <p class="produto-descricao">${produto.descricao}</p>
+                        <div class="produto-preco">${formatarPreco(produto.preco)}</div>
+                        ${produto.emEstoque ? `
+                            <div class="produto-quantidade">
+                                <label for="qtd-${produto.id}">Quantidade:</label>
+                                <input type="number" id="qtd-${produto.id}" class="input-quantidade" value="1" min="1" max="99">
+                            </div>
+                            <button class="btn-comprar" onclick="adicionarCarrinhoBtn(${produto.id}, this)">🛒 Adicionar ao Carrinho</button>
+                        ` : `
+                            <button class="btn-comprar" disabled>Indisponível</button>
+                        `}
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function adicionarCarrinhoBtn(id, btn) {
+            const qtdInput = document.getElementById(`qtd-${id}`);
+            const qtd = parseInt(qtdInput?.value) || 1;
+            adicionarAoCarrinho(id, qtd);
+            const original = btn.textContent;
+            btn.textContent = '✓ Adicionado!';
+            btn.classList.add('adicionado');
+            setTimeout(() => {
+                btn.textContent = original;
+                btn.classList.remove('adicionado');
+            }, 1500);
+        }
+
+        function abrirWhatsApp() {
+            const mensagem = "Olá! Vim pelo site da Ágape Beauty e gostaria de mais informações.";
+            window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensagem)}`, '_blank');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            criarParticulas();
+            renderizarProdutos();
+            atualizarCarrinho();
+
+            document.querySelectorAll('a[href^="#"]').forEach(a => {
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const t = document.querySelector(this.getAttribute('href'));
+                    if (t) t.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            document.getElementById('input-cep').addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') calcularFrete();
+            });
+        });
+    </script>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <!-- OVERLAY CARRINHO -->
+    <div class="overlay-carrinho" id="overlay-carrinho" onclick="fecharCarrinho()"></div>
+
+    <!-- CARRINHO LATERAL -->
+    <div class="carrinho-lateral" id="carrinho-lateral">
+
+        <!-- HEADER -->
+        <div class="carrinho-header">
+            <h2 id="carrinho-titulo-header">🛒 Meu Carrinho</h2>
+            <button class="btn-fechar-carrinho" onclick="fecharCarrinho()">✕</button>
+        </div>
+
+        <!-- INDICADOR DE STEPS -->
+        <div class="steps-indicator">
+            <div class="step-item ativo" id="step-ind-1">
+                <div class="step-circulo">1</div>
+                <span>Meu Carrinho</span>
+            </div>
+            <div class="step-item" id="step-ind-2">
+                <div class="step-circulo">2</div>
+                <span>Frete & Entrega</span>
+            </div>
+        </div>
+
+        <!-- ===== STEP 1: ITENS ===== -->
+        <div class="step-painel ativo" id="step1">
+            <div class="painel-itens" id="itens-carrinho">
+                <div class="carrinho-vazio">
+                    <div class="carrinho-vazio-icon">🛒</div>
+                    <p>Seu carrinho está vazio</p>
+                    <p style="font-size:0.85rem;margin-top:0.5rem;opacity:0.6">Adicione produtos para continuar</p>
+                </div>
+            </div>
+            <div class="step1-footer">
+                <div class="linha-subtotal">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">R$ 0,00</span>
+                </div>
+                <button class="btn-confirmar-pedido" id="btn-confirmar-pedido" onclick="irParaStep2()" disabled>
+                    Confirmar Produtos → Calcular Frete
+                </button>
+            </div>
+        </div>
+
+        <!-- ===== STEP 2: FRETE + ENDEREÇO ===== -->
+        <div class="step-painel" id="step2">
+            <div class="painel-frete-endereco">
+
+                <!-- RESUMO DOS ITENS -->
+                <div>
+                    <div class="bloco-titulo">🛍️ Resumo do Pedido</div>
+                    <div id="resumo-itens" style="font-size:0.85rem;color:var(--cor-texto);opacity:0.8;line-height:1.8;"></div>
+                </div>
+
+                <!-- FRETE -->
+                <div>
+                    <div class="bloco-titulo">🚚 Calcular Frete (SEDEX)</div>
+                    <div class="frete-input-grupo">
+                        <input type="text" id="input-cep" class="input-cep" placeholder="00000-000" maxlength="9" oninput="formatarCEP(this)">
+                        <button class="btn-calcular-frete" id="btn-calcular-frete" onclick="calcularFrete()">Calcular</button>
+                    </div>
+                    <div id="resultado-frete"></div>
+                </div>
+
+                <!-- ENDEREÇO -->
+                <div>
+                    <div class="bloco-titulo">📍 Endereço de Entrega</div>
+                    <div class="endereco-campos">
+                        <input type="text" id="end-nome" class="input-endereco" placeholder="Seu nome completo *">
+                        <input type="text" id="end-rua" class="input-endereco" placeholder="Rua / Avenida *">
+                        <div class="endereco-linha">
+                            <input type="text" id="end-numero" class="input-endereco" placeholder="Número *">
+                            <input type="text" id="end-complemento" class="input-endereco" placeholder="Complemento">
+                        </div>
+                        <input type="text" id="end-bairro" class="input-endereco" placeholder="Bairro">
+                        <div class="endereco-linha">
+                            <input type="text" id="end-cidade" class="input-endereco" placeholder="Cidade">
+                            <input type="text" id="end-estado" class="input-endereco" placeholder="UF" maxlength="2">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RODAPÉ STEP 2 -->
+            <div class="step2-footer">
+                <div class="linha-total">
+                    <span>Subtotal:</span>
+                    <span id="subtotal2">R$ 0,00</span>
+                </div>
+                <div class="linha-total">
+                    <span>Frete SEDEX:</span>
+                    <span id="frete-valor">—</span>
+                </div>
+                <div class="linha-total grande">
+                    <span>Total:</span>
+                    <span id="total-final">R$ 0,00</span>
+                </div>
+                <div class="step2-botoes">
+                    <button class="btn-voltar" onclick="voltarStep1()">← Voltar</button>
+                    <button class="btn-enviar-whatsapp" id="btn-enviar-whatsapp" onclick="enviarPedidoWhatsApp()">
+                        <span>💬</span> Enviar Pedido pelo WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- HEADER -->
+    <header id="inicio">
+        <div class="logo">
+            <span class="logo-parte1">Ágape</span>
+            <span class="logo-parte2">Beauty</span>
+        </div>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+            <button class="btn-carrinho-header" onclick="abrirCarrinho()">
+                🛒 Carrinho
+                <span class="badge-carrinho" id="badge-carrinho">0</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Beleza que transforma, amor que inspira</h1>
+            <p>Descubra nossa coleção exclusiva de cosméticos e maquiagem de luxo</p>
+            <div class="hero-buttons">
+                <a href="#produtos" class="btn btn-primary">Ver Coleção</a>
+                <button class="btn btn-secondary" onclick="abrirWhatsApp()">Falar no WhatsApp</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section class="secao-produtos" id="produtos">
+        <div class="secao-titulo">
+            <h2>Nossos Produtos</h2>
+            <p>Seleção cuidadosa de cosméticos premium para sua beleza</p>
+        </div>
+        <div class="produtos-grid" id="produtos-grid"></div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section class="secao-diferenciais">
+        <div class="diferenciais-grid">
+            <div class="diferencial-card">
+                <div class="diferencial-icone">✓</div>
+                <h3 class="diferencial-titulo">Produtos Originais</h3>
+                <p class="diferencial-texto">Garantia de autenticidade em todos os nossos produtos. Qualidade premium garantida.</p>
+            </div>
+            <div class="diferencial-card">
+                <div class="diferencial-icone">🚚</div>
+                <h3 class="diferencial-titulo">Entrega Rápida</h3>
+                <p class="diferencial-texto">Enviamos com rapidez e segurança para todo o Brasil. Embalagem cuidadosa.</p>
+            </div>
+            <div class="diferencial-card">
+                <div class="diferencial-icone">💝</div>
+                <h3 class="diferencial-titulo">Atendimento Personalizado</h3>
+                <p class="diferencial-texto">Equipe dedicada para ajudar você a encontrar o produto perfeito.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="secao-sobre" id="sobre">
+        <div class="sobre-container">
+            <h2>Sobre a Ágape Beauty</h2>
+            <p>A Ágape Beauty nasceu da paixão por beleza e do desejo de transformar vidas através de cosméticos de qualidade premium. Acreditamos que a verdadeira beleza vem de dentro para fora, e nossos produtos são cuidadosamente selecionados para potencializar sua autoconfiança e bem-estar.</p>
+            <p>Com uma abordagem boutique e personalizada, oferecemos uma experiência de compra única, onde cada cliente é tratado com carinho e atenção especial. Nossa missão é inspirar e empoderar mulheres através de produtos inovadores, sustentáveis e que realmente funcionam.</p>
+            <p>Cada produto em nosso catálogo passou por rigoroso controle de qualidade. Trabalhamos apenas com marcas confiáveis e fornecedores verificados, garantindo que você receba o melhor do melhor.</p>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="secao-contato" id="contato">
+        <h2>Vamos Conversar?</h2>
+        <p>Tem dúvidas ou quer conhecer melhor nossos produtos? Entre em contato conosco!</p>
+        <button class="btn-contato" onclick="abrirWhatsApp()">💬 Falar no WhatsApp</button>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Ágape Beauty</h3>
+                <p>Beleza que transforma, amor que inspira. Sua boutique de cosméticos premium online.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <div class="redes-sociais">
+                    <a href="https://instagram.com" target="_blank" class="rede-social">📷</a>
+                    <a href="https://facebook.com" target="_blank" class="rede-social">f</a>
+                    <a href="https://tiktok.com" target="_blank" class="rede-social">♪</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p>WhatsApp: <strong>+55 85 99847-4074</strong></p>
+                <p>Email: <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4b2a2c2a3b2e292e2a3e3f320b2e262a222765282426">[email&#160;protected]</a></strong></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ágape Beauty. Todos os direitos reservados. | Desenvolvido com 💖</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLUTUANTE -->
+    <a href="ja
