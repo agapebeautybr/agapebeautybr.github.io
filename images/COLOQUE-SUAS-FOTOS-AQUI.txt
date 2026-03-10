@@ -59,5 +59,6 @@ NOMES ESPERADOS:
 - pincel-base.jpg
 - esponja.jpg
 - kit-pinceis.jpg
+- eeoleo-argan.jpg
 
 DICA: Fotos quadradas 800x800px ficam melhores na loja!
