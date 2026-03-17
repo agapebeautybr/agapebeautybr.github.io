@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PDV — Ágape Beauty</title>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Jost',sans-serif;background:#f0e8e4;color:#2b1a1f;min-height:100vh}
+:root{--rosa:#a85572;--rosa-l:#c9748f;--dourado:#c9a96e;--nude:#fdf6f0;--verde:#27ae60;--vermelho:#e74c3c;--azul:#185FA5;--amber:#BA7517;--cinza:#f5f0eb;--brd:#e8ddd5;--txt:#2b1a1f;--txt2:#888;--txt3:#bbb}
+.pdv{min-height:100vh;display:flex;flex-direction:column}
+.topbar{background:#fff;border-bottom:1px solid var(--brd);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.topbar-logo{font-size:16px;font-weight:600;color:var(--rosa);letter-spacing:.5px}
+.topbar-nav{display:flex;gap:4px}
+.nav-btn{padding:7px 14px;border-radius:20px;border:1.5px solid var(--brd);background:transparent;font-size:12px;font-weight:600;cursor:pointer;color:var(--txt2);font-family:'Jost',sans-serif;transition:all .15s}
+.nav-btn:hover{background:var(--cinza)}
+.nav-btn.on{background:var(--rosa);color:#fff;border-color:var(--rosa)}
+.main{flex:1;padding:20px;display:flex;flex-direction:column;gap:16px;max-width:1400px;margin:0 auto;width:100%}
+.tab{display:none}.tab.on{display:contents}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.metric{background:#fff;border-radius:14px;padding:16px;border-top:3px solid var(--rosa)}
+.metric.verde{border-top-color:var(--verde)}
+.metric.vermelho{border-top-color:var(--vermelho)}
+.metric.azul{border-top-color:var(--azul)}
+.metric-label{font-size:11px;color:var(--txt2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.metric-val{font-size:22px;font-weight:600}
+.mv-verde{color:var(--verde)}.mv-vermelho{color:var(--vermelho)}.mv-azul{color:var(--azul)}.mv-rosa{color:var(--rosa)}
+.metric-sub{font-size:11px;color:var(--txt3);margin-top:4px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.row3{display:grid;grid-template-columns:2fr 1fr;gap:14px}
+.card{background:#fff;border-radius:14px;border:1px solid var(--brd);padding:18px}
+.card-title{font-size:11px;font-weight:600;color:var(--txt2);margin-bottom:14px;text-transform:uppercase;letter-spacing:.5px}
+.chart-wrap{position:relative;width:100%}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{font-size:10px;color:var(--txt3);font-weight:600;text-align:left;padding:6px 10px;border-bottom:1px solid var(--cinza);text-transform:uppercase;letter-spacing:.4px}
+td{padding:9px 10px;border-bottom:1px solid var(--cinza);color:var(--txt)}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#fff9f5}
+.badge{display:inline-block;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600}
+.b-verde{background:#d5f5e3;color:#1e8449}
+.b-vermelho{background:#fdedec;color:#c0392b}
+.b-amber{background:#fef9e7;color:#b7950b}
+.b-azul{background:#dbeafe;color:#1e40af}
+.b-cinza{background:#f5eef0;color:#777}
+.b-rosa{background:#fde8ef;color:var(--rosa)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.form-group{display:flex;flex-direction:column;gap:5px}
+.form-group label{font-size:11px;color:var(--rosa);font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+.form-group input,.form-group select{padding:8px 11px;border-radius:10px;border:1.5px solid var(--brd);font-size:13px;font-family:'Jost',sans-serif;background:#fff;color:var(--txt);outline:none;transition:border .2s}
+.form-group input:focus,.form-group select:focus{border-color:var(--rosa)}
+.btn-primary{padding:9px 18px;background:var(--rosa);color:#fff;border:none;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Jost',sans-serif;transition:all .2s}
+.btn-primary:hover{background:#96486a;transform:scale(1.02)}
+.btn-ghost{padding:9px 18px;background:transparent;color:var(--txt2);border:1.5px solid var(--brd);border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Jost',sans-serif}
+.venda-form{background:var(--cinza);border-radius:14px;padding:18px;margin-bottom:14px;border:1px solid var(--brd)}
+.progress-bar{height:6px;background:var(--cinza);border-radius:3px;overflow:hidden;margin-top:5px}
+.progress-fill{height:100%;border-radius:3px;background:var(--rosa)}
+.legend-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:10px}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--txt2)}
+.legend-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+.desp-item{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--cinza)}
+.desp-item:last-child{border-bottom:none}
+.del-btn{background:none;border:none;color:var(--txt3);cursor:pointer;font-size:16px;padding:2px 6px;line-height:1}
+.del-btn:hover{color:var(--vermelho)}
+.preview-box{background:#fff;border:1.5px solid var(--rosa);border-radius:10px;padding:8px 14px;font-size:12px;color:var(--rosa);font-weight:600;display:none}
+.login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a0812,#2d1020)}
+.login-box{background:#fff;border-radius:20px;padding:2.5rem 2rem;width:100%;max-width:360px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.login-logo{font-family:'Jost',sans-serif;font-size:1.8rem;font-weight:700;color:var(--rosa);margin-bottom:.2rem}
+.login-sub{font-size:.75rem;color:#bbb;margin-bottom:1.8rem;text-transform:uppercase;letter-spacing:1px}
+.login-inp{width:100%;padding:.75rem 1rem;border:2px solid #f0e6e6;border-radius:10px;font-size:.9rem;font-family:'Jost',sans-serif;margin-bottom:.8rem;outline:none;transition:border .2s}
+.login-inp:focus{border-color:var(--rosa)}
+.login-btn{width:100%;padding:.8rem;background:linear-gradient(135deg,var(--rosa-l),var(--rosa));color:#fff;border:none;border-radius:10px;font-weight:700;font-size:.95rem;cursor:pointer;font-family:'Jost',sans-serif}
+.login-erro{color:var(--vermelho);font-size:.8rem;margin-bottom:.5rem;min-height:1.2em}
+.link-loja{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:var(--rosa);text-decoration:none;border:1.5px solid var(--rosa);border-radius:20px;padding:5px 12px;transition:all .2s}
+.link-loja:hover{background:var(--rosa);color:#fff}
+@media(max-width:768px){.metrics{grid-template-columns:1fr 1fr}.row2,.row3{grid-template-columns:1fr}.topbar-nav{gap:2px}.nav-btn{padding:5px 8px;font-size:11px}}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-wrap" class="login-wrap">
+  <div class="login-box">
+    <div class="login-logo">💄 PDV</div>
+    <div style="font-size:.8rem;color:#c9748f;margin-bottom:.3rem">Ágape Beauty</div>
+    <div class="login-sub">Sistema de Gestão</div>
+    <div class="login-erro" id="login-erro"></div>
+    <input type="password" id="login-senha" class="login-inp" placeholder="🔒 Senha de acesso"
+           onkeydown="if(event.key==='Enter')fazerLogin()">
+    <button class="login-btn" onclick="fazerLogin()">Entrar no PDV →</button>
+  </div>
+</div>
+
+<!-- PDV -->
+<div id="pdv-wrap" class="pdv" style="display:none">
+<div class="topbar">
+  <div class="topbar-logo">💄 PDV — Ágape Beauty</div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <div class="topbar-nav">
+      <button class="nav-btn on" onclick="goTab('dashboard',this)">📊 Dashboard</button>
+      <button class="nav-btn" onclick="goTab('vendas',this)">🛍️ Vendas</button>
+      <button class="nav-btn" onclick="goTab('produtos',this)">📦 Produtos</button>
+      <button class="nav-btn" onclick="goTab('despesas',this)">💸 Despesas</button>
+      <button class="nav-btn" onclick="goTab('relatorio',this)">📈 Relatório</button>
+    </div>
+    <a href="index.html" target="_blank" class="link-loja">🌐 Ver Loja</a>
+    <button class="btn-ghost" style="padding:5px 12px;font-size:12px" onclick="sair()">Sair</button>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- DASHBOARD -->
+<div class="tab on" id="tab-dashboard">
+  <div class="metrics" id="metrics-cards"></div>
+  <div class="row3">
+    <div class="card">
+      <div class="card-title">Receita · Custo · Lucro (últimos 6 meses)</div>
+      <div class="legend-row">
+        <span class="legend-item"><span class="legend-dot" style="background:#c9748f"></span>Receita</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#e74c3c"></span>Custo</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#27ae60"></span>Lucro</span>
+      </div>
+      <div class="chart-wrap" style="height:230px"><canvas id="chart-mensal"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Vendas por categoria</div>
+      <div class="chart-wrap" style="height:230px"><canvas id="chart-cat"></canvas></div>
+    </div>
+  </div>
+  <div class="row2">
+    <div class="card">
+      <div class="card-title">Últimas vendas</div>
+      <table id="tabela-ultimas"></table>
+    </div>
+    <div class="card">
+      <div class="card-title">Top 5 produtos (receita)</div>
+      <div id="top-produtos"></div>
+    </div>
+  </div>
+</div>
+
+<!-- VENDAS -->
+<div class="tab" id="tab-vendas">
+  <div class="venda-form">
+    <div style="font-size:14px;font-weight:600;color:var(--rosa);margin-bottom:14px">➕ Registrar nova venda</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Produto</label>
+        <select id="v-produto" onchange="autoPreencherProduto()">
+          <option value="">Selecione o produto...</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Quantidade</label>
+        <input type="number" id="v-qtd" value="1" min="1" oninput="updatePreview()">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Preço de venda (R$)</label>
+        <input type="number" id="v-preco" step="0.01" placeholder="0.00" oninput="updatePreview()">
+      </div>
+      <div class="form-group">
+        <label>Custo unitário (R$)</label>
+        <input type="number" id="v-custo" step="0.01" placeholder="0.00" oninput="updatePreview()">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Forma de pagamento</label>
+        <select id="v-pagto">
+          <option>PIX</option>
+          <option>Cartão 1x</option>
+          <option>Cartão 2-6x</option>
+          <option>Boleto</option>
+          <option>Dinheiro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Data da venda</label>
+        <input type="date" id="v-data">
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;margin-top:6px">
+      <button class="btn-primary" onclick="registrarVenda()">✅ Registrar venda</button>
+      <div class="preview-box" id="v-preview"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+      <div class="card-title" style="margin-bottom:0">Histórico completo de vendas</div>
+      <input type="text" id="busca-venda" placeholder="🔍 Buscar..." style="padding:5px 10px;border-radius:20px;border:1.5px solid var(--brd);font-size:12px;font-family:'Jost',sans-serif;width:180px;outline:none" oninput="renderVendas()">
+    </div>
+    <table>
+      <thead><tr><th>Data</th><th>Produto</th><th>Categoria</th><th>Qtd</th><th>Receita</th><th>Custo</th><th>Lucro</th><th>Margem</th><th>Pagamento</th><th>Ação</th></tr></thead>
+      <tbody id="tbody-vendas"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- PRODUTOS -->
+<div class="tab" id="tab-produtos">
+  <div class="venda-form">
+    <div style="font-size:14px;font-weight:600;color:var(--rosa);margin-bottom:14px">➕ Cadastrar produto</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Nome do produto</label>
+        <input type="text" id="p-nome" placeholder="Ex: Base Líquida Matte 24h">
+      </div>
+      <div class="form-group">
+        <label>Categoria</label>
+        <select id="p-cat">
+          <option>Maquiagem</option><option>Lábios</option><option>Olhos</option>
+          <option>Skincare</option><option>Unhas</option><option>Perfume</option>
+          <option>Cabelo</option><option>Corpo</option><option>Acessórios</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Preço de venda (R$)</label>
+        <input type="number" id="p-preco" step="0.01" placeholder="0.00">
+      </div>
+      <div class="form-group">
+        <label>Custo de compra (R$)</label>
+        <input type="number" id="p-custo" step="0.01" placeholder="0.00">
+      </div>
+    </div>
+    <button class="btn-primary" onclick="cadastrarProduto()">✅ Cadastrar produto</button>
+  </div>
+  <div class="card">
+    <div class="card-title">Produtos cadastrados</div>
+    <table>
+      <thead><tr><th>Produto</th><th>Categoria</th><th>Preço venda</th><th>Custo</th><th>Lucro unit.</th><th>Margem</th><th>Multiplicador</th><th>Ação</th></tr></thead>
+      <tbody id="tbody-produtos"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- DESPESAS -->
+<div class="tab" id="tab-despesas">
+  <div class="venda-form">
+    <div style="font-size:14px;font-weight:600;color:var(--rosa);margin-bottom:14px">➕ Lançar despesa</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Descrição</label>
+        <input type="text" id="d-desc" placeholder="Ex: Hospedagem HostMF">
+      </div>
+      <div class="form-group">
+        <label>Categoria</label>
+        <select id="d-cat">
+          <option>Site / Tecnologia</option><option>Embalagem</option><option>Transporte / SEDEX</option>
+          <option>Marketing</option><option>Energia / Internet</option><option>Taxa Mercado Pago</option>
+          <option>Estoque (compra)</option><option>Outros</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Valor (R$)</label>
+        <input type="number" id="d-valor" step="0.01" placeholder="0.00">
+      </div>
+      <div class="form-group">
+        <label>Data</label>
+        <input type="date" id="d-data">
+      </div>
+    </div>
+    <button class="btn-primary" onclick="lancarDespesa()">✅ Lançar despesa</button>
+  </div>
+  <div class="row2">
+    <div class="card">
+      <div class="card-title">Despesas lançadas</div>
+      <div id="lista-despesas"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Despesas por categoria</div>
+      <div class="chart-wrap" style="height:260px"><canvas id="chart-desp"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<!-- RELATÓRIO -->
+<div class="tab" id="tab-relatorio">
+  <div class="metrics" id="rel-metrics"></div>
+  <div class="row2">
+    <div class="card">
+      <div class="card-title">DRE — Demonstração de Resultado</div>
+      <div id="dre-table"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Margem de lucro por categoria</div>
+      <div class="chart-wrap" style="height:280px"><canvas id="chart-margem"></canvas></div>
+    </div>
+  </div>
+  <div class="row2">
+    <div class="card">
+      <div class="card-title">Formas de pagamento</div>
+      <div style="display:flex;gap:16px;align-items:center">
+        <div class="chart-wrap" style="height:200px;flex:1"><canvas id="chart-pagto"></canvas></div>
+        <div id="pagto-breakdown" style="flex:1"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Evolução mensal do lucro</div>
+      <div class="chart-wrap" style="height:200px"><canvas id="chart-lucro"></canvas></div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const fmt = v => 'R$ ' + parseFloat(v).toFixed(2).replace('.',',').replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+const today = new Date().toISOString().slice(0,10);
+document.getElementById('v-data').value = today;
+document.getElementById('d-data').value = today;
+
+const SENHA_KEY='agape_admin_senha', PRODS_PDV='agape_pdv_produtos', VENDAS_PDV='agape_pdv_vendas', DESP_PDV='agape_pdv_despesas';
+const SENHA_PAD='agape@2025';
+const getSenha = () => localStorage.getItem(SENHA_KEY)||SENHA_PAD;
+const load = k => { try{ const s=localStorage.getItem(k); return s?JSON.parse(s):[]; }catch(e){return [];} };
+const save = (k,v) => localStorage.setItem(k,JSON.stringify(v));
+
+function fazerLogin(){
+  const s = document.getElementById('login-senha').value;
+  if(s===getSenha()){
+    document.getElementById('login-wrap').style.display='none';
+    document.getElementById('pdv-wrap').style.display='flex';
+    iniciar();
+  } else {
+    document.getElementById('login-erro').textContent='⚠️ Senha incorreta!';
+  }
+}
+function sair(){
+  document.getElementById('login-wrap').style.display='flex';
+  document.getElementById('pdv-wrap').style.display='none';
+  document.getElementById('login-senha').value='';
+}
+
+let produtos=[], vendas=[], despesas=[];
+let chartMensal,chartCat,chartDesp,chartMargem,chartPagto,chartLucro;
+
+function iniciar(){
+  produtos = load(PRODS_PDV);
+  vendas   = load(VENDAS_PDV);
+  despesas = load(DESP_PDV);
+
+  if(!produtos.length){
+    produtos=[
+      {id:1,nome:'Base Líquida Matte 24h',cat:'Maquiagem',preco:89.90,custo:32},
+      {id:2,nome:'Batom Veludo Rosê',cat:'Lábios',preco:34.90,custo:12},
+      {id:3,nome:'Gloss Labial Plump',cat:'Lábios',preco:29.90,custo:10},
+      {id:4,nome:'Paleta Sombras Rosê 12 tons',cat:'Olhos',preco:159.90,custo:55},
+      {id:5,nome:'Sérum Vitamina C 20%',cat:'Skincare',preco:129.90,custo:45},
+      {id:6,nome:'Óleo Capilar Argan',cat:'Cabelo',preco:69.90,custo:24},
+      {id:7,nome:'Deo Parfum Floral 75ml',cat:'Perfume',preco:189.90,custo:70},
+      {id:8,nome:'Hidratante Corporal Rosa',cat:'Corpo',preco:59.90,custo:20},
+      {id:9,nome:'Esmalte Rosê Nude',cat:'Unhas',preco:14.90,custo:5},
+      {id:10,nome:'Kit Pincéis 10 peças',cat:'Acessórios',preco:89.90,custo:30},
+    ];
+    save(PRODS_PDV,produtos);
+  }
+
+  if(!vendas.length){
+    const meses=['2024-10','2024-11','2024-12','2025-01','2025-02','2025-03'];
+    const pagtos=['PIX','Cartão 1x','PIX','PIX','Cartão 2-6x','Dinheiro'];
+    for(let m=0;m<6;m++){
+      for(let i=0;i<8;i++){
+        const p=produtos[Math.floor(Math.random()*produtos.length)];
+        const qtd=Math.ceil(Math.random()*3);
+        const d=String(Math.ceil(Math.random()*28)).padStart(2,'0');
+        vendas.push({id:Date.now()+m*1000+i,produto:p.nome,cat:p.cat,qtd,preco:p.preco,custo:p.custo,pagto:pagtos[Math.floor(Math.random()*6)],data:meses[m]+'-'+d});
+      }
+    }
+    save(VENDAS_PDV,vendas);
+  }
+
+  if(!despesas.length){
+    despesas=[
+      {id:1,desc:'Hospedagem HostMF',cat:'Site / Tecnologia',valor:25.99,data:'2025-03-01'},
+      {id:2,desc:'Plástico bolha e caixas',cat:'Embalagem',valor:85.00,data:'2025-03-02'},
+      {id:3,desc:'SEDEX pedidos março',cat:'Transporte / SEDEX',valor:120.40,data:'2025-03-05'},
+      {id:4,desc:'Internet residencial',cat:'Energia / Internet',valor:89.90,data:'2025-03-01'},
+      {id:5,desc:'Cartões de agradecimento',cat:'Marketing',valor:22.00,data:'2025-03-08'},
+      {id:6,desc:'Taxa Mercado Pago março',cat:'Taxa Mercado Pago',valor:18.70,data:'2025-03-15'},
+    ];
+    save(DESP_PDV,despesas);
+  }
+
+  populateSelect();
+  renderAll();
+}
+
+function populateSelect(){
+  const sel=document.getElementById('v-produto');
+  sel.innerHTML='<option value="">Selecione o produto...</option>';
+  produtos.forEach(p=>sel.innerHTML+=`<option value="${p.id}">${p.nome} — ${fmt(p.preco)}</option>`);
+}
+
+function autoPreencherProduto(){
+  const p=produtos.find(x=>x.id==document.getElementById('v-produto').value);
+  if(p){ document.getElementById('v-preco').value=p.preco; document.getElementById('v-custo').value=p.custo; updatePreview(); }
+}
+
+function updatePreview(){
+  const pr=parseFloat(document.getElementById('v-preco').value)||0;
+  const cu=parseFloat(document.getElementById('v-custo').value)||0;
+  const qt=parseInt(document.getElementById('v-qtd').value)||1;
+  const lucro=(pr-cu)*qt;
+  const mg=pr>0?((pr-cu)/pr*100).toFixed(1):0;
+  const el=document.getElementById('v-preview');
+  if(pr>0){ el.style.display='block'; el.innerHTML=`Lucro: <strong>${fmt(lucro)}</strong> &nbsp;|&nbsp; Margem: <strong>${mg}%</strong>`; }
+  else { el.style.display='none'; }
+}
+
+function registrarVenda(){
+  const pid=document.getElementById('v-produto').value;
+  const p=produtos.find(x=>x.id==pid);
+  if(!p){alert('Selecione um produto!');return;}
+  const qtd=parseInt(document.getElementById('v-qtd').value)||1;
+  const preco=parseFloat(document.getElementById('v-preco').value)||0;
+  const custo=parseFloat(document.getElementById('v-custo').value)||0;
+  const pagto=document.getElementById('v-pagto').value;
+  const data=document.getElementById('v-data').value;
+  if(!preco){alert('Informe o preço de venda!');return;}
+  vendas.unshift({id:Date.now(),produto:p.nome,cat:p.cat,qtd,preco,custo,pagto,data});
+  save(VENDAS_PDV,vendas);
+  renderAll();
+  document.getElementById('v-produto').value='';
+  document.getElementById('v-preco').value='';
+  document.getElementById('v-custo').value='';
+  document.getElementById('v-qtd').value=1;
+  document.getElementById('v-preview').style.display='none';
+  alert('✅ Venda registrada com sucesso!');
+}
+
+function deletarVenda(id){
+  if(!confirm('Excluir esta venda?'))return;
+  vendas=vendas.filter(v=>v.id!==id);
+  save(VENDAS_PDV,vendas);
+  renderAll();
+}
+
+function cadastrarProduto(){
+  const nome=document.getElementById('p-nome').value.trim();
+  const cat=document.getElementById('p-cat').value;
+  const preco=parseFloat(document.getElementById('p-preco').value)||0;
+  const custo=parseFloat(document.getElementById('p-custo').value)||0;
+  if(!nome||!preco){alert('Preencha nome e preço!');return;}
+  produtos.push({id:Date.now(),nome,cat,preco,custo});
+  save(PRODS_PDV,produtos);
+  populateSelect();
+  renderProdutos();
+  document.getElementById('p-nome').value='';
+  document.getElementById('p-preco').value='';
+  document.getElementById('p-custo').value='';
+}
+
+function deletarProduto(id){
+  if(!confirm('Excluir este produto?'))return;
+  produtos=produtos.filter(p=>p.id!==id);
+  save(PRODS_PDV,produtos);
+  populateSelect();
+  renderProdutos();
+}
+
+function lancarDespesa(){
+  const desc=document.getElementById('d-desc').value.trim();
+  const cat=document.getElementById('d-cat').value;
+  const valor=parseFloat(document.getElementById('d-valor').value)||0;
+  const data=document.getElementById('d-data').value;
+  if(!desc||!valor){alert('Preencha descrição e valor!');return;}
+  despesas.unshift({id:Date.now(),desc,cat,valor,data});
+  save(DESP_PDV,despesas);
+  renderDespesas();
+  renderRelatorio();
+  document.getElementById('d-desc').value='';
+  document.getElementById('d-valor').value='';
+}
+
+function deletarDespesa(id){
+  if(!confirm('Excluir esta despesa?'))return;
+  despesas=despesas.filter(d=>d.id!==id);
+  save(DESP_PDV,despesas);
+  renderDespesas();
+  renderRelatorio();
+}
+
+function dc(c){if(c)c.destroy();}
+
+function renderDashboard(){
+  const totalRec=vendas.reduce((a,v)=>a+v.preco*v.qtd,0);
+  const totalCus=vendas.reduce((a,v)=>a+v.custo*v.qtd,0);
+  const totalLuc=totalRec-totalCus;
+  const totalDesp=despesas.reduce((a,d)=>a+d.valor,0);
+  const lucLiq=totalLuc-totalDesp;
+  const mg=totalRec>0?(totalLuc/totalRec*100).toFixed(1):0;
+
+  document.getElementById('metrics-cards').innerHTML=`
+    <div class="metric azul"><div class="metric-label">Receita total</div><div class="metric-val mv-azul">${fmt(totalRec)}</div><div class="metric-sub">${vendas.length} vendas registradas</div></div>
+    <div class="metric verde"><div class="metric-label">Lucro bruto</div><div class="metric-val mv-verde">${fmt(totalLuc)}</div><div class="metric-sub">Margem ${mg}%</div></div>
+    <div class="metric vermelho"><div class="metric-label">Despesas</div><div class="metric-val mv-vermelho">${fmt(totalDesp)}</div><div class="metric-sub">${despesas.length} lançamentos</div></div>
+    <div class="metric"><div class="metric-label">Lucro líquido</div><div class="metric-val ${lucLiq>=0?'mv-verde':'mv-vermelho'}">${fmt(lucLiq)}</div><div class="metric-sub">Após todas as despesas</div></div>
+  `;
+
+  const mKeys=['2024-10','2024-11','2024-12','2025-01','2025-02','2025-03'];
+  const mLabels=['Out','Nov','Dez','Jan','Fev','Mar'];
+  const rec=mKeys.map(m=>Math.round(vendas.filter(v=>v.data.startsWith(m)).reduce((a,v)=>a+v.preco*v.qtd,0)));
+  const cus=mKeys.map(m=>Math.round(vendas.filter(v=>v.data.startsWith(m)).reduce((a,v)=>a+v.custo*v.qtd,0)));
+  const luc=rec.map((r,i)=>r-cus[i]);
+
+  dc(chartMensal);
+  chartMensal=new Chart(document.getElementById('chart-mensal'),{
+    type:'bar',
+    data:{labels:mLabels,datasets:[
+      {label:'Receita',data:rec,backgroundColor:'#c9748f',borderRadius:4},
+      {label:'Custo',data:cus,backgroundColor:'#e74c3c',borderRadius:4},
+      {label:'Lucro',data:luc,backgroundColor:'#27ae60',borderRadius:4},
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{ticks:{callback:v=>'R$'+Math.round(v)},grid:{color:'rgba(0,0,0,.05)'}}}}
+  });
+
+  const cats=[...new Set(vendas.map(v=>v.cat))];
+  const catRec=cats.map(c=>Math.round(vendas.filter(v=>v.cat===c).reduce((a,v)=>a+v.preco*v.qtd,0)));
+  const colors=['#a85572','#c9a96e','#27ae60','#185FA5','#BA7517','#639922','#D85A30','#533AB7','#0F6E56'];
+  dc(chartCat);
+  chartCat=new Chart(document.getElementById('chart-cat'),{
+    type:'doughnut',
+    data:{labels:cats,datasets:[{data:catRec,backgroundColor:colors,borderWidth:2,borderColor:'#fff'}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:11},boxWidth:10,padding:8}}}}
+  });
+
+  document.getElementById('tabela-ultimas').innerHTML=`
+    <thead><tr><th>Data</th><th>Produto</th><th>Qtd</th><th>Receita</th><th>Lucro</th><th>Pagto</th></tr></thead>
+    <tbody>${vendas.slice(0,8).map(v=>{
+      const l=(v.preco-v.custo)*v.qtd;
+      return `<tr><td>${v.data.slice(5)}</td><td>${v.produto}</td><td>${v.qtd}</td><td>${fmt(v.preco*v.qtd)}</td><td style="color:${l>=0?'#1e8449':'#c0392b'};font-weight:600">${fmt(l)}</td><td><span class="badge b-azul">${v.pagto}</span></td></tr>`;
+    }).join('')}</tbody>
+  `;
+
+  const pMap={};
+  vendas.forEach(v=>{pMap[v.produto]=(pMap[v.produto]||0)+v.preco*v.qtd;});
+  const top=Object.entries(pMap).sort((a,b)=>b[1]-a[1]).slice(0,5);
+  const maxV=top[0]?top[0][1]:1;
+  document.getElementById('top-produtos').innerHTML=top.map(([nome,val])=>`
+    <div style="margin-bottom:12px">
+      <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px">
+        <span>${nome}</span><span style="color:var(--txt2);font-weight:600">${fmt(val)}</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:${(val/maxV*100).toFixed(0)}%"></div></div>
+    </div>`).join('');
+}
+
+function renderVendas(){
+  const busca=(document.getElementById('busca-venda').value||'').toLowerCase();
+  const lista=vendas.filter(v=>!busca||v.produto.toLowerCase().includes(busca)||v.pagto.toLowerCase().includes(busca)||v.data.includes(busca));
+  document.getElementById('tbody-vendas').innerHTML=lista.map(v=>{
+    const rec=v.preco*v.qtd;
+    const cus=v.custo*v.qtd;
+    const luc=rec-cus;
+    const mg=rec>0?(luc/rec*100).toFixed(1):0;
+    const mb=mg>=40?'b-verde':mg>=20?'b-amber':'b-vermelho';
+    return `<tr>
+      <td>${v.data.slice(5)}</td><td style="font-weight:500">${v.produto}</td>
+      <td><span class="badge b-cinza">${v.cat}</span></td>
+      <td style="text-align:center">${v.qtd}</td>
+      <td style="font-weight:600">${fmt(rec)}</td>
+      <td style="color:#c0392b">${fmt(cus)}</td>
+      <td style="color:#1e8449;font-weight:600">${fmt(luc)}</td>
+      <td><span class="badge ${mb}">${mg}%</span></td>
+      <td><span class="badge b-azul">${v.pagto}</span></td>
+      <td><button class="del-btn" onclick="deletarVenda(${v.id})">×</button></td>
+    </tr>`;
+  }).join('');
+}
+
+function renderProdutos(){
+  document.getElementById('tbody-produtos').innerHTML=produtos.map(p=>{
+    const luc=p.preco-p.custo;
+    const mg=p.preco>0?((luc/p.preco)*100).toFixed(1):0;
+    const mult=p.custo>0?(p.preco/p.custo).toFixed(1)+'x':'-';
+    const mb=mg>=50?'b-verde':mg>=30?'b-amber':'b-vermelho';
+    return `<tr>
+      <td style="font-weight:500">${p.nome}</td>
+      <td><span class="badge b-cinza">${p.cat}</span></td>
+      <td style="font-weight:600">${fmt(p.preco)}</td>
+      <td style="color:#c0392b">${fmt(p.custo)}</td>
+      <td style="color:#1e8449;font-weight:600">${fmt(luc)}</td>
+      <td><span class="badge ${mb}">${mg}%</span></td>
+      <td style="font-weight:600;color:var(--rosa)">${mult}</td>
+      <td><button class="del-btn" onclick="deletarProduto(${p.id})">×</button></td>
+    </tr>`;
+  }).join('');
+}
+
+function renderDespesas(){
+  const total=despesas.reduce((a,d)=>a+d.valor,0);
+  const catMap={};
+  despesas.forEach(d=>{catMap[d.cat]=(catMap[d.cat]||0)+d.valor;});
+
+  document.getElementById('lista-despesas').innerHTML=`
+    <div style="font-size:13px;font-weight:600;color:var(--vermelho);margin-bottom:12px">Total: ${fmt(total)}</div>
+    ${despesas.map(d=>`
+      <div class="desp-item">
+        <div>
+          <div style="font-size:13px;font-weight:500">${d.desc}</div>
+          <div style="font-size:11px;color:var(--txt3);margin-top:2px">${d.data} · <span class="badge b-cinza" style="font-size:10px">${d.cat}</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-size:13px;font-weight:600;color:var(--vermelho)">${fmt(d.valor)}</span>
+          <button class="del-btn" onclick="deletarDespesa(${d.id})">×</button>
+        </div>
+      </div>`).join('')}
+  `;
+
+  const cats=Object.keys(catMap);
+  const vals=cats.map(c=>parseFloat(catMap[c].toFixed(2)));
+  const colors=['#a85572','#c9a96e','#185FA5','#27ae60','#BA7517','#D85A30','#533AB7','#0F6E56'];
+  dc(chartDesp);
+  chartDesp=new Chart(document.getElementById('chart-desp'),{
+    type:'pie',
+    data:{labels:cats,datasets:[{data:vals,backgroundColor:colors,borderWidth:2,borderColor:'#fff'}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:11},boxWidth:10,padding:8}}}}
+  });
+}
+
+function renderRelatorio(){
+  const totalRec=vendas.reduce((a,v)=>a+v.preco*v.qtd,0);
+  const totalCus=vendas.reduce((a,v)=>a+v.custo*v.qtd,0);
+  const lucBruto=totalRec-totalCus;
+  const totalDesp=despesas.reduce((a,d)=>a+d.valor,0);
+  const lucLiq=lucBruto-totalDesp;
+  const mgBruta=totalRec>0?(lucBruto/totalRec*100).toFixed(1):0;
+  const mgLiq=totalRec>0?(lucLiq/totalRec*100).toFixed(1):0;
+
+  document.getElementById('rel-metrics').innerHTML=`
+    <div class="metric azul"><div class="metric-label">Receita bruta</div><div class="metric-val mv-azul">${fmt(totalRec)}</div><div class="metric-sub">${vendas.length} vendas</div></div>
+    <div class="metric vermelho"><div class="metric-label">Custo dos produtos</div><div class="metric-val mv-vermelho">${fmt(totalCus)}</div></div>
+    <div class="metric verde"><div class="metric-label">Lucro bruto</div><div class="metric-val mv-verde">${fmt(lucBruto)}</div><div class="metric-sub">Margem ${mgBruta}%</div></div>
+    <div class="metric"><div class="metric-label">Lucro líquido</div><div class="metric-val ${lucLiq>=0?'mv-verde':'mv-vermelho'}">${fmt(lucLiq)}</div><div class="metric-sub">Margem ${mgLiq}%</div></div>
+  `;
+
+  document.getElementById('dre-table').innerHTML=`
+    <table>
+      <tbody>
+        <tr><td style="color:var(--txt2)">Receita bruta</td><td style="text-align:right;font-weight:600">${fmt(totalRec)}</td></tr>
+        <tr><td style="color:#c0392b">(−) Custo dos produtos</td><td style="text-align:right;color:#c0392b">(${fmt(totalCus)})</td></tr>
+        <tr style="background:#f9fef6"><td style="font-weight:600;padding:10px 10px">= Lucro bruto</td><td style="text-align:right;font-weight:600;color:#1e8449;padding:10px 10px">${fmt(lucBruto)}</td></tr>
+        <tr><td style="color:var(--txt3);font-size:12px">  Margem bruta</td><td style="text-align:right;color:var(--txt3);font-size:12px">${mgBruta}%</td></tr>
+        <tr><td style="color:#c0392b;padding-top:10px">(−) Despesas operacionais</td><td style="text-align:right;color:#c0392b;padding-top:10px">(${fmt(totalDesp)})</td></tr>
+        <tr style="background:${lucLiq>=0?'#f9fef6':'#fff5f5'}"><td style="font-weight:600;padding:10px 10px">= Lucro líquido</td><td style="text-align:right;font-weight:600;color:${lucLiq>=0?'#1e8449':'#c0392b'};padding:10px 10px">${fmt(lucLiq)}</td></tr>
+        <tr><td style="color:var(--txt3);font-size:12px">  Margem líquida</td><td style="text-align:right;color:var(--txt3);font-size:12px">${mgLiq}%</td></tr>
+      </tbody>
+    </table>
+  `;
+
+  const cats=[...new Set(vendas.map(v=>v.cat))];
+  const catMg=cats.map(c=>{
+    const cv=vendas.filter(v=>v.cat===c);
+    const r=cv.reduce((a,v)=>a+v.preco*v.qtd,0);
+    const cu=cv.reduce((a,v)=>a+v.custo*v.qtd,0);
+    return r>0?parseFloat(((r-cu)/r*100).toFixed(1)):0;
+  });
+  dc(chartMargem);
+  chartMargem=new Chart(document.getElementById('chart-margem'),{
+    type:'bar',data:{labels:cats,datasets:[{label:'Margem %',data:catMg,backgroundColor:catMg.map(v=>v>=50?'#27ae60':v>=30?'#BA7517':'#e74c3c'),borderRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{ticks:{callback:v=>v+'%'},max:100,grid:{color:'rgba(0,0,0,.05)'}},y:{grid:{display:false}}}}
+  });
+
+  const pMap={};
+  vendas.forEach(v=>{pMap[v.pagto]=(pMap[v.pagto]||0)+v.preco*v.qtd;});
+  const pKeys=Object.keys(pMap);
+  const pVals=pKeys.map(k=>Math.round(pMap[k]));
+  const pColors=['#a85572','#c9a96e','#185FA5','#27ae60','#BA7517'];
+  dc(chartPagto);
+  chartPagto=new Chart(document.getElementById('chart-pagto'),{
+    type:'doughnut',data:{labels:pKeys,datasets:[{data:pVals,backgroundColor:pColors,borderWidth:2,borderColor:'#fff'}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}}
+  });
+  const totP=pVals.reduce((a,b)=>a+b,0);
+  document.getElementById('pagto-breakdown').innerHTML=pKeys.map((k,i)=>`
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--cinza)">
+      <div style="display:flex;align-items:center;gap:7px"><span style="width:10px;height:10px;border-radius:2px;background:${pColors[i]};display:inline-block"></span><span style="font-size:13px">${k}</span></div>
+      <div style="text-align:right"><div style="font-size:13px;font-weight:600">${fmt(pMap[k])}</div><div style="font-size:11px;color:var(--txt3)">${totP>0?(pMap[k]/totP*100).toFixed(1):0}%</div></div>
+    </div>`).join('');
+
+  const mKeys=['2024-10','2024-11','2024-12','2025-01','2025-02','2025-03'];
+  const mLabels=['Out','Nov','Dez','Jan','Fev','Mar'];
+  const lucMes=mKeys.map(m=>{
+    const r=vendas.filter(v=>v.data.startsWith(m)).reduce((a,v)=>a+v.preco*v.qtd,0);
+    const c=vendas.filter(v=>v.data.startsWith(m)).reduce((a,v)=>a+v.custo*v.qtd,0);
+    return Math.round(r-c);
+  });
+  dc(chartLucro);
+  chartLucro=new Chart(document.getElementById('chart-lucro'),{
+    type:'line',data:{labels:mLabels,datasets:[{label:'Lucro',data:lucMes,borderColor:'#27ae60',backgroundColor:'rgba(39,174,96,.1)',fill:true,tension:.4,pointBackgroundColor:'#27ae60',pointRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{ticks:{callback:v=>'R$'+v},grid:{color:'rgba(0,0,0,.05)'}}}}
+  });
+}
+
+function renderAll(){
+  renderDashboard();
+  renderVendas();
+  renderProdutos();
+  renderDespesas();
+  renderRelatorio();
+}
+
+function goTab(id,btn){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('on'));
+  document.getElementById('tab-'+id).classList.add('on');
+  btn.classList.add('on');
+}
+</script>
+</body>
+</html>
