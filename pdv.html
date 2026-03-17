@@ -318,7 +318,7 @@ const today = new Date().toISOString().slice(0,10);
 document.getElementById('v-data').value = today;
 document.getElementById('d-data').value = today;
 
-const SENHA_KEY='agape_admin_senha', PRODS_PDV='agape_pdv_produtos', VENDAS_PDV='agape_pdv_vendas', DESP_PDV='agape_pdv_despesas';
+const SENHA_KEY='agape_admin_senha', PRODS_PDV='agape_produtos', VENDAS_PDV='agape_pdv_vendas', DESP_PDV='agape_pdv_despesas';
 const SENHA_PAD='agape@2025';
 const getSenha = () => localStorage.getItem(SENHA_KEY)||SENHA_PAD;
 const load = k => { try{ const s=localStorage.getItem(k); return s?JSON.parse(s):[]; }catch(e){return [];} };
